@@ -136,11 +136,11 @@ void SVPWM_SetVectorTimes(SVPWM *pm) {
     uint8_t sector;
     uint16_t sectorIndex, angleIndex;
     sector = (*pm).CurrentSector + 1;
-    printf("Sector + 1 %d\r\n", sector);
+    printf("Sector + 1 %d\r\n", sector);            // GOOD
     sectorIndex = sector * 60 - 1;
-    printf("Sector index %d\r\n", sectorIndex);
-    angleIndex = (*pm).RefAngle * 60 / MAX_ANGLE;
-    printf("Angle Index %d\r\n", angleIndex);
+    printf("Sector index %d\r\n", sectorIndex);     // GOOD
+    angleIndex = (*pm).RefAngle * 60 / EQUIVALENT_60deg;
+    printf("Reference Angle Index %d\r\n", angleIndex);
 
     (*pm).Timer.basicVec1 = (SQRT_3 * (*pm).Timer.totalPeriod * (sineTable[sectorIndex] * cosineTable[angleIndex] - sineTable[angleIndex] * cosineTable[sectorIndex]));
 
