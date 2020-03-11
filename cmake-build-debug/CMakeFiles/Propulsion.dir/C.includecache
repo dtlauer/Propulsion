@@ -17,6 +17,8 @@ structs.h
 /Users/dominickauer/CSCI/Propulsion/structs.h
 trigTables.h
 /Users/dominickauer/CSCI/Propulsion/trigTables.h
+transistors.h
+/Users/dominickauer/CSCI/Propulsion/transistors.h
 
 /Users/dominickauer/CSCI/Propulsion/main.c
 stdio.h
@@ -31,6 +33,8 @@ trigTables.h
 /Users/dominickauer/CSCI/Propulsion/trigTables.h
 functions.h
 /Users/dominickauer/CSCI/Propulsion/functions.h
+transistors.h
+/Users/dominickauer/CSCI/Propulsion/transistors.h
 
 /Users/dominickauer/CSCI/Propulsion/structs.h
 stdio.h
@@ -39,6 +43,18 @@ stdlib.h
 -
 stdint.h
 -
+
+/Users/dominickauer/CSCI/Propulsion/transistors.h
+stdio.h
+-
+stdlib.h
+-
+stdint.h
+-
+structs.h
+/Users/dominickauer/CSCI/Propulsion/structs.h
+trigTables.h
+/Users/dominickauer/CSCI/Propulsion/trigTables.h
 
 /Users/dominickauer/CSCI/Propulsion/trigTables.h
 stdio.h

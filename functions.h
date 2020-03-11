@@ -7,6 +7,7 @@
 #include <stdint.h>
 #include "structs.h"
 #include "trigTables.h"
+#include "transistors.h"
 
 #ifndef PROPULSION_FUNCTIONS_H
 #define PROPULSION_FUNCTIONS_H
@@ -22,144 +23,20 @@
 #define SQRT_3 1.73205080757
 
 //Returns the current sector of the SVPWM system
-SVPWM_SEC SVPWM_GetControlAngleSEC(SVPWM *pm){
+SVPWM_SEC SVPWM_GetControlAngleSEC(SVPWM *pm) {
 
     //Because this is integer math, the remnants are automatically discarded and we're left with how many times 60 degrees goes into the current angle
     //This is allowed because enums always start at 0 and go to #elements -1. SO each sector gets a subsequent assignment
     return ((*pm).ControlAngle / EQUIVALENT_60deg) % 6; //CONVRET TO multiples of 60 deg
-    /*
-    int8_t inter = ((*pm).ControlAngle / EQUIVALENT_60deg) % 6; //CONVRET TO multiples of 60 deg
-
-        switch(inter){
-    case 0:
-        return SEC1;
-        break;
-    case 1:
-        return SEC2;
-        break;
-    case 2:
-        return SEC3;
-        break;
-    case 3:
-        return SEC4;
-        break;
-    case 4:
-        return SEC5;
-        break;
-    case 5:
-        return SEC6;
-        break;
-    default:
-        return SEC1;
-    }*/
 }
 
 //Updates the sector of the control signal
-void SVPWM_SetCurrentSEC(SVPWM *pm){
+void SVPWM_SetCurrentSEC(SVPWM *pm) {
     (*pm).CurrentSector = SVPWM_GetControlAngleSEC(pm);
 }
 
-//Sets the transistors for state V0. T1 and T4 is LSB
-void SVPWM_WriteV0(SVPWM *pm){
-    (*pm).setTran1(0);
-    (*pm).setTran2(0);
-    (*pm).setTran3(0);
-
-    (*pm).setTran4(1);
-    (*pm).setTran5(1);
-    (*pm).setTran6(1);
-}
-
-//Sets the transistors for state V1
-void SVPWM_WriteV1(SVPWM *pm){
-    (*pm).setTran1(1);
-    (*pm).setTran2(0);
-    (*pm).setTran3(0);
-
-    (*pm).setTran4(0);
-    (*pm).setTran5(1);
-    (*pm).setTran6(1);
-}
-
-//Sets the transistors for state V2
-void SVPWM_WriteV2(SVPWM *pm){
-    (*pm).setTran1(0);
-    (*pm).setTran2(1);
-    (*pm).setTran3(0);
-
-    (*pm).setTran4(1);
-    (*pm).setTran5(0);
-    (*pm).setTran6(1);
-}
-
-//Sets the transistors for state V3
-void SVPWM_WriteV3(SVPWM *pm){
-    (*pm).setTran1(1);
-    (*pm).setTran2(1);
-    (*pm).setTran3(0);
-
-    (*pm).setTran4(0);
-    (*pm).setTran5(0);
-    (*pm).setTran6(1);
-}
-
-//Sets the transistors for state V4
-void SVPWM_WriteV4(SVPWM *pm){
-    (*pm).setTran1(0);
-    (*pm).setTran2(0);
-    (*pm).setTran3(1);
-
-    (*pm).setTran4(1);
-    (*pm).setTran5(1);
-    (*pm).setTran6(0);
-}
-
-//Sets the transistors for state V5
-void SVPWM_WriteV5(SVPWM *pm){
-    (*pm).setTran1(1);
-    (*pm).setTran2(0);
-    (*pm).setTran3(1);
-
-    (*pm).setTran4(0);
-    (*pm).setTran5(1);
-    (*pm).setTran6(0);
-}
-
-//Sets the transistors for state V6
-void SVPWM_WriteV6(SVPWM *pm){
-    (*pm).setTran1(0);
-    (*pm).setTran2(1);
-    (*pm).setTran3(1);
-
-    (*pm).setTran4(1);
-    (*pm).setTran5(0);
-    (*pm).setTran6(0);
-}
-
-//Sets the transistors for state V7
-void SVPWM_WriteV7(SVPWM *pm){
-    (*pm).setTran1(1);
-    (*pm).setTran2(1);
-    (*pm).setTran3(1);
-
-    (*pm).setTran4(0);
-    (*pm).setTran5(0);
-    (*pm).setTran6(0);
-}
-
-//Sets the transistors to off state
-void SVPWM_WriteOFF(SVPWM *pm){
-    (*pm).setTran1(0);
-    (*pm).setTran2(0);
-    (*pm).setTran3(0);
-
-    (*pm).setTran4(0);
-    (*pm).setTran5(0);
-    (*pm).setTran6(0);
-}
-
 //Updates the current timer to get the next wait time
-void SVPWM_UpdateCurrentTimer(SVPWM *pm){
+void SVPWM_UpdateCurrentTimer(SVPWM *pm) {
     switch((*pm).State){
         case V0_ABS:
             (*pm).Timer.currentTime = (*pm).Timer.halfZeroVector;
@@ -179,14 +56,14 @@ void SVPWM_UpdateCurrentTimer(SVPWM *pm){
 }
 
 //Gets the absolute voltage vector from the relative voltage vector and the sector number
-SVPWM_ABS_VEC SVPWM_GetAbsoluteVoltageVector(SVPWM *pm){
+SVPWM_ABS_VEC SVPWM_GetAbsoluteVoltageVector(SVPWM *pm) {
     //Two zero vectors are independent of the state
     if((*pm).State == V0_REL)
         return V0_ABS;
     if((*pm).State == V7_REL)
         return V7_ABS;
 
-    switch((*pm).CurrentSector){
+    switch((*pm).CurrentSector) {
         case SEC1:
             if((*pm).State == V1_REL)
                 return V1_ABS;
@@ -229,8 +106,8 @@ SVPWM_ABS_VEC SVPWM_GetAbsoluteVoltageVector(SVPWM *pm){
 }
 
 //Progresses the current voltage state to the next voltage state
-void SVPWM_SetNextRelativeState(SVPWM *pm){
-    switch((*pm).State){
+void SVPWM_SetNextRelativeState(SVPWM *pm) {
+    switch((*pm).State) {
         case V0_REL:
             (*pm).State = V1_REL;
             break;
@@ -249,13 +126,13 @@ void SVPWM_SetNextRelativeState(SVPWM *pm){
 }
 
 //Takes a unsigned 14 bit angle input and updates the reference angle
-void SVPWM_SetControlAngle(SVPWM *pm, uint16_t inputAngle){
+void SVPWM_SetControlAngle(SVPWM *pm, uint16_t inputAngle) {
     (*pm).ControlAngle = inputAngle;
     (*pm).RefAngle =  inputAngle % EQUIVALENT_60deg; //Find how many points past the nearest 60 we are
 }
 
 //Calculates the appropriate amount of time to spend in each sector
-void SVPWM_SetVectorTimes(SVPWM *pm){
+void SVPWM_SetVectorTimes(SVPWM *pm) {
     uint8_t sector;
     uint16_t sectorIndex, angleIndex;
     sector = (*pm).CurrentSector + 1;
@@ -265,17 +142,17 @@ void SVPWM_SetVectorTimes(SVPWM *pm){
     angleIndex = (*pm).RefAngle * 60 / MAX_ANGLE;
     printf("Angle Index %d\r\n", angleIndex);
 
-    (*pm).Timer.basicVec1 = (SQRT_3 * (*pm).Timer.totalPeriod * (*pm).refVector.magnitude * (sineTable[sectorIndex] * cosineTable[angleIndex] - sineTable[angleIndex] * cosineTable[sectorIndex]));
+    (*pm).Timer.basicVec1 = (SQRT_3 * (*pm).Timer.totalPeriod * (sineTable[sectorIndex] * cosineTable[angleIndex] - sineTable[angleIndex] * cosineTable[sectorIndex]));
 
     sectorIndex = (sector - 1) * 60;
-    (*pm).Timer.basicVec2 = (SQRT_3 * (*pm).Timer.totalPeriod * (*pm).refVector.magnitude * (- sineTable[sectorIndex] * cosineTable[angleIndex] + sineTable[angleIndex] * cosineTable[sectorIndex]));
+    (*pm).Timer.basicVec2 = (SQRT_3 * (*pm).Timer.totalPeriod * (- sineTable[sectorIndex] * cosineTable[angleIndex] + sineTable[angleIndex] * cosineTable[sectorIndex]));
 
     (*pm).Timer.halfZeroVector = ((*pm).Timer.totalPeriod - (*pm).Timer.basicVec1 - (*pm).Timer.basicVec2) >> 1;
 
 }
 
 //Calls the write function to the input vector
-void SVPWM_WriteABSVector(SVPWM *pm){
+void SVPWM_WriteABSVector(SVPWM *pm) {
     switch(SVPWM_GetAbsoluteVoltageVector(pm)){
         case V0_ABS:
             SVPWM_WriteV0(pm);
@@ -308,7 +185,7 @@ void SVPWM_WriteABSVector(SVPWM *pm){
 }
 
 
-void SVPWM_STDISR(SVPWM *pm){
+void SVPWM_STDISR(SVPWM *pm) {
     SVPWM_SetCurrentSEC(pm);
     SVPWM_SetNextRelativeState(pm);
     SVPWM_WriteABSVector(pm);
@@ -316,48 +193,54 @@ void SVPWM_STDISR(SVPWM *pm){
     SVPWM_UpdateCurrentTimer(pm);
 }
 
-uint16_t Test_setTimer(uint16_t time){
+uint16_t Test_setTimer(uint16_t time) {
     printf("Time: %d\n\r", time);
 }
 
 //Basic Debugging functions
-uint8_t TEST_V0(uint8_t input){
+uint8_t TEST_V0(uint8_t input) {
     if(input == 0)
         printf("T0: OFF\n\r");
     if(input == 1)
         printf("T0: ON\n\r");
 }
-uint8_t TEST_V1(uint8_t input){
+
+uint8_t TEST_V1(uint8_t input) {
     if(input == 0)
         printf("T1: OFF\n\r");
     if(input == 1)
         printf("T1: ON\n\r");
 }
-uint8_t TEST_V2(uint8_t input){
+
+uint8_t TEST_V2(uint8_t input) {
     if(input == 0)
         printf("T2: OFF\n\r");
     if(input == 1)
         printf("T2: ON\n\r");
 }
-uint8_t TEST_V3(uint8_t input){
+
+uint8_t TEST_V3(uint8_t input) {
     if(input == 0)
         printf("T3: OFF\n\r");
     if(input == 1)
         printf("T3: ON\n\r");
 }
-uint8_t TEST_V4(uint8_t input){
+
+uint8_t TEST_V4(uint8_t input) {
     if(input == 0)
         printf("T4: OFF\n\r");
     if(input == 1)
         printf("T4: ON\n\r");
 }
-uint8_t TEST_V5(uint8_t input){
+
+uint8_t TEST_V5(uint8_t input) {
     if(input == 0)
         printf("T5: OFF\n\r");
     if(input == 1)
         printf("T5: ON\n\r");
 }
-uint8_t TEST_V6(uint8_t input){
+
+uint8_t TEST_V6(uint8_t input) {
     if(input == 0)
         printf("T6: OFF\n\r");
     if(input == 1)

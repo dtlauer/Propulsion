@@ -4,5 +4,6 @@
 CMakeFiles/Propulsion.dir/main.c.o: ../functions.h
 CMakeFiles/Propulsion.dir/main.c.o: ../main.c
 CMakeFiles/Propulsion.dir/main.c.o: ../structs.h
+CMakeFiles/Propulsion.dir/main.c.o: ../transistors.h
 CMakeFiles/Propulsion.dir/main.c.o: ../trigTables.h
 

@@ -85,6 +85,9 @@
 		<Unit filename="/Users/dominickauer/CSCI/Propulsion/structs.h">
 			<Option target="Propulsion"/>
 		</Unit>
+		<Unit filename="/Users/dominickauer/CSCI/Propulsion/transistors.h">
+			<Option target="Propulsion"/>
+		</Unit>
 		<Unit filename="/Users/dominickauer/CSCI/Propulsion/trigTables.h">
 			<Option target="Propulsion"/>
 		</Unit>

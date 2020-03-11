@@ -4,6 +4,7 @@
 #include "structs.h"
 #include "trigTables.h"
 #include "functions.h"
+#include "transistors.h"
 
 #define MAG_RADIX_POINT 8
 
@@ -79,17 +80,15 @@ int main() {
         SVPWM_SetControlAngle(&pwmBoi, (MAX_ANGLE*TEST_Angles[i]/360));
         printf("Control Angle: %d\n\r", pwmBoi.ControlAngle);
         printf("Ref Angle: %d\n\r", pwmBoi.RefAngle);
-        for(int j = 0; j < 4; j++){
-            printf("***************************\n\r");
-            fakeISR();
-            printf("ABS Voltage: %d\n\r", SVPWM_GetAbsoluteVoltageVector(&pwmBoi));
-            printf("Sector: %d\n\r", (pwmBoi.CurrentSector));
-            printf("Current State: %d\n\r", pwmBoi.State);
-            printf("Total Period: %u\n\r", pwmBoi.Timer.totalPeriod);
-            printf("Half Vec Time: %u\n\r", pwmBoi.Timer.halfZeroVector);
-            printf("Vec 1 Time: %u\n\r", pwmBoi.Timer.basicVec1);
-            printf("Vec 2 Time: %u\n\r", pwmBoi.Timer.basicVec2);
-        }
+        fakeISR();
+        printf("ABS Voltage: %d\n\r", SVPWM_GetAbsoluteVoltageVector(&pwmBoi));
+        printf("Sector: %d\n\r", (pwmBoi.CurrentSector));
+        printf("Current State: %d\n\r", pwmBoi.State);
+        printf("Total Period: %u\n\r", pwmBoi.Timer.totalPeriod);
+        printf("Half Vec Time: %u\n\r", pwmBoi.Timer.halfZeroVector);
+        printf("Vec 1 Time: %u\n\r", pwmBoi.Timer.basicVec1);
+        printf("Vec 2 Time: %u\n\r", pwmBoi.Timer.basicVec2);
+
     }
 
     return 0;

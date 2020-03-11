@@ -3,4 +3,4 @@ project(Propulsion C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(Propulsion main.c structs.h trigTables.h functions.h)
+add_executable(Propulsion main.c structs.h trigTables.h functions.h transistors.h)
