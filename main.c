@@ -25,6 +25,7 @@ void fakeISR() {
 
 int main() {
     //Setup function pointers
+   
     pwmBoi.setTran1 = TEST_V1;
     pwmBoi.setTran2 = TEST_V2;
     pwmBoi.setTran3 = TEST_V3;
@@ -33,10 +34,9 @@ int main() {
     pwmBoi.setTran6 = TEST_V6;
 
     //Calculate Switching Times
-    pwmBoi.Timer.totalPeriod = 30000;
+    pwmBoi.Timer.totalPeriod = 0xFFFF;
     pwmBoi.Timer.magnitude = 0x7F;
-
-    pwmBoi.refVector.magnitude = 1000;
+    pwmBoi.refVector.magnitude = 75;
 
     uint16_t TEST_Angles [19] = {12, 45, 59, 60, 105, 119, 120, 155, 179, 180, 203, 239, 240, 258, 299, 300, 315, 359, 360};
 
@@ -49,7 +49,10 @@ int main() {
         printf("Ref Angle: %d\n\r", pwmBoi.RefAngle);
         fakeISR();
         printf("Sector: %d\n\r", (pwmBoi.CurrentSector));
-        printf("Current State: %d\n\r", pwmBoi.State);
+
+        printf("Sine %f\n", sineTable[TEST_Angles[i]]);
+        printf("Cosine %f\n", cosineTable[TEST_Angles[i]]);
+
         printf("Total Period: %u\n\r", pwmBoi.Timer.totalPeriod);
         printf("Half Vec Time: %u\n\r", pwmBoi.Timer.halfZeroVector);
         printf("Vec 1 Time: %u\n\r", pwmBoi.Timer.basicVec1);

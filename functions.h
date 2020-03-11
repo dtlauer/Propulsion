@@ -27,7 +27,7 @@ SVPWM_SEC SVPWM_GetControlAngleSEC(SVPWM *pm) {
 
     //Because this is integer math, the remnants are automatically discarded and we're left with how many times 60 degrees goes into the current angle
     //This is allowed because enums always start at 0 and go to #elements -1. SO each sector gets a subsequent assignment
-    return ((*pm).ControlAngle / EQUIVALENT_60deg) % 6; //CONVRET TO multiples of 60 deg
+    return ((*pm).ControlAngle / EQUIVALENT_60deg) % 6; //CONVERT TO multiples of 60 deg
 }
 
 //Updates the sector of the control signal
@@ -140,7 +140,9 @@ void SVPWM_SetVectorTimes(SVPWM *pm) {
     sectorIndex = sector * 60 - 1;
     printf("Sector index %d\r\n", sectorIndex);     // GOOD
     angleIndex = (*pm).RefAngle * 60 / EQUIVALENT_60deg;
-    printf("Reference Angle Index %d\r\n", angleIndex);
+    printf("Reference Angle Index %d\r\n", angleIndex);     // GOOD
+
+    uint16_t V_DC = 100;
 
     (*pm).Timer.basicVec1 = (SQRT_3 * (*pm).Timer.totalPeriod * (sineTable[sectorIndex] * cosineTable[angleIndex] - sineTable[angleIndex] * cosineTable[sectorIndex]));
 
