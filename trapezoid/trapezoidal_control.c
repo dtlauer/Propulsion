@@ -140,6 +140,11 @@ void writePWM(PWMSignalOut output) {
 // interrupt function
 void interrupt() {
 
+    // first read the latest Hall data
 
+    // use hall data to determine state of the motor
 
+    // use state of the motor to set PWM output
+
+    // send PWM output to the motor
 }
