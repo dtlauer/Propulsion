@@ -1,5 +1,9 @@
 // Kyle Frisbee and Dominic Lauer
-// basic Trapezoidal Control for BLDC motor
+// basic Trapezoidal Control for BLDC motor\
+
+#include <stdlib.h>
+#include <stdint.h>
+#include <stdio.h>
 
 // data structure to hold Hall sensor data
 typedef struct {
@@ -8,20 +12,20 @@ typedef struct {
     uint8_t phaseV;
     uint8_t phaseW;
 
-} HallData
+} HallData;
 
 // data structure to hold switching states
 typedef enum {
 
-    OFF;
-    State1;
-    State2;
-    State3;
-    State4;
-    State5;
-    State6;
+    OFF,
+    State1,
+    State2,
+    State3,
+    State4,
+    State5,
+    State6,
 
-} SwitchingState
+} SwitchingState;
 
 typedef struct {
 
@@ -32,7 +36,7 @@ typedef struct {
     uint8_t signalC_H;
     uint8_t signalC_L;
 
-} PWMSignalOut
+} PWMSignalOut;
 
 // function to read in the Hall sensor data
 SwitchingState readHallData(HallData input) {
@@ -119,6 +123,7 @@ PWMSignalOut setSwitchingStates(SwitchingState currentState) {
         output.signalC_L = 0;
         return output;
 
+    // default case - turn the motor off (all 0 or all 1)
     default:
         output.signalA_H = 0;
         output.signalA_L = 0;
@@ -147,4 +152,24 @@ void interrupt() {
     // use state of the motor to set PWM output
 
     // send PWM output to the motor
+}
+
+void main() {
+
+    HallData input;
+    input.phaseU = 0;
+    input.phaseV = 0;
+    input.phaseW = 0;
+
+    SwitchingState currentState = readHallData(input);
+    printf("State: %d\n", currentState);
+
+    PWMSignalOut output = setSwitchingStates(currentState);
+    printf("A_H: %d\n", output.signalA_H);
+    printf("A_L: %d\n", output.signalA_L);
+    printf("B_H: %d\n", output.signalB_H);
+    printf("B_L: %d\n", output.signalB_L);
+    printf("C_H: %d\n", output.signalC_H);
+    printf("C_L: %d\n", output.signalC_L);
+
 }
