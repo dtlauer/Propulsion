@@ -8,7 +8,6 @@
 #include "mcc_generated_files/device_config.h"
 #include "mcc_generated_files/pin_manager.h"
 
-
 // data structure to hold Hall sensor data
 typedef struct {
 
@@ -64,7 +63,11 @@ HallData readHallData() {
 // function to read in the Hall sensor data
 SwitchingState interpretHallData(HallData input) {
 
-    if (input.phaseU == 1 && input.phaseV == 0 && input.phaseW == 1) return State1;
+    if (BUTTON_PORT == 1 || KILLSWITCH_PORT == 1) return OFF; 
+    // if the button is not pressed, the motor should be OFF
+    // OR if the dead man switch is released, turn the motor OFF
+    
+    else if (input.phaseU == 1 && input.phaseV == 0 && input.phaseW == 1) return State1;
 
     else if (input.phaseU == 1 && input.phaseV == 0 && input.phaseW == 0) return State2;
 
@@ -170,24 +173,42 @@ void writePWM(PWMSignalOut output) {
     C_L_LAT = output.signalC_L;
     
 }
+
 // interrupt function
 void TMR0_DefaultInterruptHandler() {
 
     INTCONbits.TMR0IF = 0; //clear TMR0 interrupt flag
         
     // first read the latest Hall data
-
+    HallData input = readHallData;
     // use hall data to determine state of the motor
-
+    SwitchingState state = interpretHallData(input);
     // use state of the motor to set PWM output
-
+    PWMSignalOut output = setSwitchingStates(state);
     // send PWM output to the motor
+    writePWM(output);
 }
 
 void main() {
     
-    INTCONbits.TMR0IE = 1;        // Enable TMR0 interrupt
-    INTCONbits.GIE = 1;          // Enable global interrupts
+    INTCONbits.TMR0IF = 0;      // clears TMR0 interrupt flag
+    INTCONbits.TMR0IE = 1;      // Enable TMR0 interrupt
+    INTCONbits.GIE = 1;         // Enable global interrupts
+    
+    for(;;) {   // interrupt is enabled, so just let it run
+        
+/*        INTCONbits.TMR0IE = 0; //disable TMR0 interrupt
+        
+        while(BUTTON_PORT == 1); 
+        //while button is not pressed, wait
+        //BUTTON_PORT will equal 0 when button is pressed
+*/              
+    }
+    //turn off interrupts
+    //look for button press while button == 0;
+    //turn on interrupts
+    
+    
     
 /*    HallData input;
     input.phaseU = 0;

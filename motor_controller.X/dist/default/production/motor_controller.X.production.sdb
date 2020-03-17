@@ -9,7 +9,7 @@ channel_CTMU 29
 channel_DAC 30
 channel_FVRBuf2 31
 ]
-"65 C:\Users\Kyle Frisbee\Documents\Senior Design\Code\Propulsion\motor_controller.X\main.c
+"64 C:\Users\Kyle Frisbee\Documents\Senior Design\Code\Propulsion\motor_controller.X\main.c
 [e E6327 . `uc
 OFF 0
 State1 1
@@ -288,5 +288,5 @@ State6 6
 "187 C:\Users\Kyle Frisbee\Documents\Senior Design\Code\Propulsion\motor_controller.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"208
+"223
 } 0

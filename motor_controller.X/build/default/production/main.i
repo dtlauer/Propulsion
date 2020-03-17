@@ -9802,7 +9802,6 @@ void OSCILLATOR_Initialize(void);
 
 
 
-
 typedef struct {
 
     uint8_t phaseU;
@@ -9964,6 +9963,7 @@ void writePWM(PWMSignalOut output) {
 
 }
 
+
 void TMR0_DefaultInterruptHandler() {
 
     INTCONbits.TMR0IF = 0;
@@ -9974,5 +9974,15 @@ void main() {
 
     INTCONbits.TMR0IE = 1;
     INTCONbits.GIE = 1;
-# 208 "main.c"
+
+    for(;;) {
+
+        INTCONbits.TMR0IE = 0;
+
+        while(PORTAbits.RA3 == 1);
+
+        INTCONbits.TMR0IE = 1;
+
+    }
+# 223 "main.c"
 }
