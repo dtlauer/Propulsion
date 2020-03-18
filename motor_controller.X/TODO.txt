@@ -1,15 +1,15 @@
--Create separate header files
--Write initialization function (TMR, bits, clk)
-DONE -Determine clock, TMR frequencies
-DONE -Write ISR
-   DONE -clear TMR interrupt flag
-   DONE -call PWM related functions
--Write main
-    DONE -initialize
-    DONE -infinite loop to run through states
-    DONE -button logic (handled in interpretHallData() )
-DONE -Implement both CCW and CW signal generation
--Write test code
+DONE - Create separate header files
+DONE - Write initialization function (TMR, bits, clk)
+DONE - Determine clock, TMR frequencies
+DONE - Write ISR
+   DONE - clear TMR interrupt flag
+   DONE - call PWM related functions
+- Write main
+    DONE - initialize
+    DONE - infinite loop to run through states
+    DONE - button logic (handled in interpretHallData() )
+DONE - Implement both CCW and CW signal generation
+- Write test code
     - generate three random numbers (1 or 0) to simulate Hall data
     - send to our functions to interpret and generate output
     - write input and output to a text file
@@ -17,4 +17,4 @@ DONE -Implement both CCW and CW signal generation
     - run the above steps in a loop and count correct implementations
 
 - look up noise control for buttons
--use MCC generated functions to clean up code
+DONE - use MCC generated functions to clean up code

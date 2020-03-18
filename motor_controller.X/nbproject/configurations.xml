@@ -14,6 +14,8 @@
         <itemPath>mcc_generated_files/interrupt_manager.h</itemPath>
         <itemPath>mcc_generated_files/tmr0.h</itemPath>
       </logicalFolder>
+      <itemPath>dataStructures.h</itemPath>
+      <itemPath>methods.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"

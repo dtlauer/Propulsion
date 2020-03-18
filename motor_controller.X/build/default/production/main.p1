@@ -1,124 +1,127 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"12 main.c
-[; ;main.c: 12: typedef struct {
-[s S854 `uc 1 `uc 1 `uc 1 ]
-[n S854 . phaseU phaseV phaseW ]
-"6286 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f44k22.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f44k22.h: 6286:     struct {
-[s S334 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S334 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 RA7 ]
-"6296
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f44k22.h: 6296:     struct {
-[s S335 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S335 . AN0 AN1 AN2 AN3 . AN4 ]
-"6304
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f44k22.h: 6304:     struct {
-[s S336 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S336 . C12IN0M C12IN1M C2INP C1INP C1OUT C2OUT ]
-"6312
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f44k22.h: 6312:     struct {
-[s S337 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S337 . C12IN0N C12IN1N VREFM VREFP T0CKI SS ]
-"6320
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f44k22.h: 6320:     struct {
-[s S338 :5 `uc 1 :1 `uc 1 ]
-[n S338 . . NOT_SS ]
-"6324
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f44k22.h: 6324:     struct {
-[s S339 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S339 . . VREFN . SRQ nSS ]
-"6331
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f44k22.h: 6331:     struct {
-[s S340 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S340 . . CVREF . LVDIN ]
-"6337
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f44k22.h: 6337:     struct {
-[s S341 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S341 . . DACOUT . HLVDIN ]
-"6343
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f44k22.h: 6343:     struct {
-[s S342 :5 `uc 1 :1 `uc 1 ]
-[n S342 . . SS1 ]
-"6347
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f44k22.h: 6347:     struct {
-[s S343 :5 `uc 1 :1 `uc 1 ]
-[n S343 . . NOT_SS1 ]
-"6351
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f44k22.h: 6351:     struct {
-[s S344 :5 `uc 1 :1 `uc 1 ]
-[n S344 . . nSS1 ]
-"6355
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f44k22.h: 6355:     struct {
-[s S345 :5 `uc 1 :1 `uc 1 ]
-[n S345 . . SRNQ ]
-"6359
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f44k22.h: 6359:     struct {
-[s S346 :1 `uc 1 :6 `uc 1 :1 `uc 1 ]
-[n S346 . ULPWUIN . RJPU ]
-"6285
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f44k22.h: 6285: typedef union {
-[u S333 `S334 1 `S335 1 `S336 1 `S337 1 `S338 1 `S339 1 `S340 1 `S341 1 `S342 1 `S343 1 `S344 1 `S345 1 `S346 1 ]
-[n S333 . . . . . . . . . . . . . . ]
-"6365
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f44k22.h: 6365: extern volatile PORTAbits_t PORTAbits __attribute__((address(0xF80)));
-[v _PORTAbits `VS333 ~T0 @X0 0 e@3968 ]
-"64 main.c
-[; ;main.c: 64: SwitchingState interpretHallData(HallData input) {
-[c E6327 0 1 2 3 4 5 6 .. ]
-[n E6327 . OFF State1 State2 State3 State4 State5 State6  ]
-"33
-[; ;main.c: 33: typedef struct {
-[s S855 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 ]
-[n S855 . signalA_H signalA_L signalB_H signalB_L signalC_H signalC_L ]
-"7678 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f44k22.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f44k22.h: 7678:     struct {
-[s S385 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S385 . LATB0 LATB1 LATB2 LATB3 LATB4 LATB5 LATB6 LATB7 ]
-"7688
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f44k22.h: 7688:     struct {
-[s S386 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S386 . LB0 LB1 LB2 LB3 LB4 LB5 LB6 LB7 ]
-"7677
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f44k22.h: 7677: typedef union {
-[u S384 `S385 1 `S386 1 ]
-[n S384 . . . ]
-"7699
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f44k22.h: 7699: extern volatile LATBbits_t LATBbits __attribute__((address(0xF8A)));
-[v _LATBbits `VS384 ~T0 @X0 0 e@3978 ]
-"7902
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f44k22.h: 7902:     struct {
-[s S391 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S391 . LATD0 LATD1 LATD2 LATD3 LATD4 LATD5 LATD6 LATD7 ]
-"7912
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f44k22.h: 7912:     struct {
-[s S392 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S392 . LD0 LD1 LD2 LD3 LD4 LD5 LD6 LD7 ]
-"7901
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f44k22.h: 7901: typedef union {
-[u S390 `S391 1 `S392 1 ]
-[n S390 . . . ]
-"7923
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f44k22.h: 7923: extern volatile LATDbits_t LATDbits __attribute__((address(0xF8C)));
-[v _LATDbits `VS390 ~T0 @X0 0 e@3980 ]
-"16898
+"16898 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f44k22.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f44k22.h: 16898:     struct {
-[s S825 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S825 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
+[s S828 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S828 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
 "16908
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f44k22.h: 16908:     struct {
-[s S826 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S826 . . INT0F T0IF . INT0E T0IE PEIE GIE ]
+[s S829 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S829 . . INT0F T0IF . INT0E T0IE PEIE GIE ]
 "16918
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f44k22.h: 16918:     struct {
-[s S827 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S827 . . GIEL GIEH ]
+[s S830 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S830 . . GIEL GIEH ]
 "16897
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f44k22.h: 16897: typedef union {
-[u S824 `S825 1 `S826 1 `S827 1 ]
-[n S824 . . . . ]
+[u S827 `S828 1 `S829 1 `S830 1 ]
+[n S827 . . . . ]
 "16924
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f44k22.h: 16924: extern volatile INTCONbits_t INTCONbits __attribute__((address(0xFF2)));
-[v _INTCONbits `VS824 ~T0 @X0 0 e@4082 ]
+[v _INTCONbits `VS827 ~T0 @X0 0 e@4082 ]
+"71 ./mcc_generated_files/mcc.h
+[; ;./mcc_generated_files/mcc.h: 71: void SYSTEM_Initialize(void);
+[v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
+"16 ./dataStructures.h
+[; ;./dataStructures.h: 16: typedef struct {
+[s S8 `uc 1 `uc 1 `uc 1 ]
+[n S8 . phaseU phaseV phaseW ]
+"6286 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f44k22.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f44k22.h: 6286:     struct {
+[s S337 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S337 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 RA7 ]
+"6296
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f44k22.h: 6296:     struct {
+[s S338 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S338 . AN0 AN1 AN2 AN3 . AN4 ]
+"6304
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f44k22.h: 6304:     struct {
+[s S339 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S339 . C12IN0M C12IN1M C2INP C1INP C1OUT C2OUT ]
+"6312
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f44k22.h: 6312:     struct {
+[s S340 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S340 . C12IN0N C12IN1N VREFM VREFP T0CKI SS ]
+"6320
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f44k22.h: 6320:     struct {
+[s S341 :5 `uc 1 :1 `uc 1 ]
+[n S341 . . NOT_SS ]
+"6324
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f44k22.h: 6324:     struct {
+[s S342 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S342 . . VREFN . SRQ nSS ]
+"6331
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f44k22.h: 6331:     struct {
+[s S343 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S343 . . CVREF . LVDIN ]
+"6337
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f44k22.h: 6337:     struct {
+[s S344 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S344 . . DACOUT . HLVDIN ]
+"6343
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f44k22.h: 6343:     struct {
+[s S345 :5 `uc 1 :1 `uc 1 ]
+[n S345 . . SS1 ]
+"6347
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f44k22.h: 6347:     struct {
+[s S346 :5 `uc 1 :1 `uc 1 ]
+[n S346 . . NOT_SS1 ]
+"6351
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f44k22.h: 6351:     struct {
+[s S347 :5 `uc 1 :1 `uc 1 ]
+[n S347 . . nSS1 ]
+"6355
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f44k22.h: 6355:     struct {
+[s S348 :5 `uc 1 :1 `uc 1 ]
+[n S348 . . SRNQ ]
+"6359
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f44k22.h: 6359:     struct {
+[s S349 :1 `uc 1 :6 `uc 1 :1 `uc 1 ]
+[n S349 . ULPWUIN . RJPU ]
+"6285
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f44k22.h: 6285: typedef union {
+[u S336 `S337 1 `S338 1 `S339 1 `S340 1 `S341 1 `S342 1 `S343 1 `S344 1 `S345 1 `S346 1 `S347 1 `S348 1 `S349 1 ]
+[n S336 . . . . . . . . . . . . . . ]
+"6365
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f44k22.h: 6365: extern volatile PORTAbits_t PORTAbits __attribute__((address(0xF80)));
+[v _PORTAbits `VS336 ~T0 @X0 0 e@3968 ]
+"43 ./methods.h
+[; ;./methods.h: 43: SwitchingState interpretHallData(HallData input) {
+[c E498 0 1 2 3 4 5 6 .. ]
+[n E498 . OFF State1 State2 State3 State4 State5 State6  ]
+"37 ./dataStructures.h
+[; ;./dataStructures.h: 37: typedef struct {
+[s S9 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 ]
+[n S9 . signalA_H signalA_L signalB_H signalB_L signalC_H signalC_L ]
+"7678 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f44k22.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f44k22.h: 7678:     struct {
+[s S388 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S388 . LATB0 LATB1 LATB2 LATB3 LATB4 LATB5 LATB6 LATB7 ]
+"7688
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f44k22.h: 7688:     struct {
+[s S389 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S389 . LB0 LB1 LB2 LB3 LB4 LB5 LB6 LB7 ]
+"7677
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f44k22.h: 7677: typedef union {
+[u S387 `S388 1 `S389 1 ]
+[n S387 . . . ]
+"7699
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f44k22.h: 7699: extern volatile LATBbits_t LATBbits __attribute__((address(0xF8A)));
+[v _LATBbits `VS387 ~T0 @X0 0 e@3978 ]
+"7902
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f44k22.h: 7902:     struct {
+[s S394 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S394 . LATD0 LATD1 LATD2 LATD3 LATD4 LATD5 LATD6 LATD7 ]
+"7912
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f44k22.h: 7912:     struct {
+[s S395 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S395 . LD0 LD1 LD2 LD3 LD4 LD5 LD6 LD7 ]
+"7901
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f44k22.h: 7901: typedef union {
+[u S393 `S394 1 `S395 1 ]
+[n S393 . . . ]
+"7923
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f44k22.h: 7923: extern volatile LATDbits_t LATDbits __attribute__((address(0xF8C)));
+[v _LATDbits `VS393 ~T0 @X0 0 e@3980 ]
 [p mainexit ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f44k22.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f44k22.h: 54: __asm("ANSELA equ 0F38h");
@@ -876,381 +879,610 @@ Version 4.0 HI-TECH Software Intermediate Code
 "17372
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f44k22.h: 17372: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"52 main.c
-[; ;main.c: 52: HallData readHallData() {
-[v _readHallData `(S854 ~T0 @X0 1 ef ]
+"23 ./methods.h
+[; ;./methods.h: 23: void initialize() {
+[v _initialize `(v ~T0 @X0 1 ef ]
+{
+[e :U _initialize ]
+[f ]
+"25
+[; ;./methods.h: 25:     INTCONbits.GIE = 1;
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+"27
+[; ;./methods.h: 27:     SYSTEM_Initialize();
+[e ( _SYSTEM_Initialize ..  ]
+"29
+[; ;./methods.h: 29: }
+[e :UE 857 ]
+}
+"31
+[; ;./methods.h: 31: HallData readHallData() {
+[v _readHallData `(S8 ~T0 @X0 1 ef ]
 {
 [e :U _readHallData ]
 [f ]
-"54
-[; ;main.c: 54:     HallData input;
-[v _input `S854 ~T0 @X0 1 a ]
-"56
-[; ;main.c: 56:     input.phaseU = PORTAbits.RA0;
+"33
+[; ;./methods.h: 33:     HallData input;
+[v _input `S8 ~T0 @X0 1 a ]
+"35
+[; ;./methods.h: 35:     input.phaseU = PORTAbits.RA0;
 [e = . _input 0 . . _PORTAbits 0 0 ]
-"57
-[; ;main.c: 57:     input.phaseV = PORTAbits.RA1;
+"36
+[; ;./methods.h: 36:     input.phaseV = PORTAbits.RA1;
 [e = . _input 1 . . _PORTAbits 0 1 ]
-"58
-[; ;main.c: 58:     input.phaseW = PORTAbits.RA2;
+"37
+[; ;./methods.h: 37:     input.phaseW = PORTAbits.RA2;
 [e = . _input 2 . . _PORTAbits 0 2 ]
-"59
-[; ;main.c: 59:     return input;
+"38
+[; ;./methods.h: 38:     return input;
 [e ) _input ]
-[e $UE 857  ]
-"61
-[; ;main.c: 61: }
-[e :UE 857 ]
-}
-"64
-[; ;main.c: 64: SwitchingState interpretHallData(HallData input) {
-[v _interpretHallData `(E6327 ~T0 @X0 1 ef1`S854 ]
-{
-[e :U _interpretHallData ]
-[v _input `S854 ~T0 @X0 1 r1 ]
-[f ]
-"66
-[; ;main.c: 66:     if (input.phaseU == 1 && input.phaseV == 0 && input.phaseW == 1) return State1;
-[e $ ! && && == -> . _input 0 `i -> 1 `i == -> . _input 1 `i -> 0 `i == -> . _input 2 `i -> 1 `i 859  ]
-[e ) . `E6327 1 ]
 [e $UE 858  ]
-[e $U 860  ]
-"68
-[; ;main.c: 68:     else if (input.phaseU == 1 && input.phaseV == 0 && input.phaseW == 0) return State2;
-[e :U 859 ]
-[e $ ! && && == -> . _input 0 `i -> 1 `i == -> . _input 1 `i -> 0 `i == -> . _input 2 `i -> 0 `i 861  ]
-[e ) . `E6327 2 ]
-[e $UE 858  ]
-[e $U 862  ]
-"70
-[; ;main.c: 70:     else if (input.phaseU == 1 && input.phaseV == 1 && input.phaseW == 0) return State3;
-[e :U 861 ]
-[e $ ! && && == -> . _input 0 `i -> 1 `i == -> . _input 1 `i -> 1 `i == -> . _input 2 `i -> 0 `i 863  ]
-[e ) . `E6327 3 ]
-[e $UE 858  ]
-[e $U 864  ]
-"72
-[; ;main.c: 72:     else if (input.phaseU == 0 && input.phaseV == 1 && input.phaseW == 0) return State4;
-[e :U 863 ]
-[e $ ! && && == -> . _input 0 `i -> 0 `i == -> . _input 1 `i -> 1 `i == -> . _input 2 `i -> 0 `i 865  ]
-[e ) . `E6327 4 ]
-[e $UE 858  ]
-[e $U 866  ]
-"74
-[; ;main.c: 74:     else if (input.phaseU == 0 && input.phaseV == 1 && input.phaseW == 1) return State5;
-[e :U 865 ]
-[e $ ! && && == -> . _input 0 `i -> 0 `i == -> . _input 1 `i -> 1 `i == -> . _input 2 `i -> 1 `i 867  ]
-[e ) . `E6327 5 ]
-[e $UE 858  ]
-[e $U 868  ]
-"76
-[; ;main.c: 76:     else if (input.phaseU == 0 && input.phaseV == 0 && input.phaseW == 1) return State6;
-[e :U 867 ]
-[e $ ! && && == -> . _input 0 `i -> 0 `i == -> . _input 1 `i -> 0 `i == -> . _input 2 `i -> 1 `i 869  ]
-[e ) . `E6327 6 ]
-[e $UE 858  ]
-[e $U 870  ]
-"78
-[; ;main.c: 78:     else return OFF;
-[e :U 869 ]
-[e ) . `E6327 0 ]
-[e $UE 858  ]
-[e :U 870 ]
-[e :U 868 ]
-[e :U 866 ]
-[e :U 864 ]
-[e :U 862 ]
-[e :U 860 ]
-"79
-[; ;main.c: 79: }
+"40
+[; ;./methods.h: 40: }
 [e :UE 858 ]
 }
-"82
-[; ;main.c: 82: PWMSignalOut setSwitchingStates(SwitchingState currentState) {
-[v _setSwitchingStates `(S855 ~T0 @X0 1 ef1`E6327 ]
+"43
+[; ;./methods.h: 43: SwitchingState interpretHallData(HallData input) {
+[v _interpretHallData `(E498 ~T0 @X0 1 ef1`S8 ]
 {
-[e :U _setSwitchingStates ]
-[v _currentState `E6327 ~T0 @X0 1 r1 ]
+[e :U _interpretHallData ]
+[v _input `S8 ~T0 @X0 1 r1 ]
 [f ]
-"84
-[; ;main.c: 84:     PWMSignalOut output;
-[v _output `S855 ~T0 @X0 1 a ]
-"86
-[; ;main.c: 86:     switch(currentState) {
+"45
+[; ;./methods.h: 45:     if (PORTAbits.RA3 == 1 || PORTAbits.RA4 == 1) return OFF;
+[e $ ! || == -> . . _PORTAbits 0 3 `i -> 1 `i == -> . . _PORTAbits 0 4 `i -> 1 `i 860  ]
+[e ) . `E498 0 ]
+[e $UE 859  ]
+[e $U 861  ]
+"49
+[; ;./methods.h: 49:     else if (input.phaseU == 1 && input.phaseV == 0 && input.phaseW == 1) return State1;
+[e :U 860 ]
+[e $ ! && && == -> . _input 0 `i -> 1 `i == -> . _input 1 `i -> 0 `i == -> . _input 2 `i -> 1 `i 862  ]
+[e ) . `E498 1 ]
+[e $UE 859  ]
+[e $U 863  ]
+"51
+[; ;./methods.h: 51:     else if (input.phaseU == 1 && input.phaseV == 0 && input.phaseW == 0) return State2;
+[e :U 862 ]
+[e $ ! && && == -> . _input 0 `i -> 1 `i == -> . _input 1 `i -> 0 `i == -> . _input 2 `i -> 0 `i 864  ]
+[e ) . `E498 2 ]
+[e $UE 859  ]
+[e $U 865  ]
+"53
+[; ;./methods.h: 53:     else if (input.phaseU == 1 && input.phaseV == 1 && input.phaseW == 0) return State3;
+[e :U 864 ]
+[e $ ! && && == -> . _input 0 `i -> 1 `i == -> . _input 1 `i -> 1 `i == -> . _input 2 `i -> 0 `i 866  ]
+[e ) . `E498 3 ]
+[e $UE 859  ]
+[e $U 867  ]
+"55
+[; ;./methods.h: 55:     else if (input.phaseU == 0 && input.phaseV == 1 && input.phaseW == 0) return State4;
+[e :U 866 ]
+[e $ ! && && == -> . _input 0 `i -> 0 `i == -> . _input 1 `i -> 1 `i == -> . _input 2 `i -> 0 `i 868  ]
+[e ) . `E498 4 ]
+[e $UE 859  ]
+[e $U 869  ]
+"57
+[; ;./methods.h: 57:     else if (input.phaseU == 0 && input.phaseV == 1 && input.phaseW == 1) return State5;
+[e :U 868 ]
+[e $ ! && && == -> . _input 0 `i -> 0 `i == -> . _input 1 `i -> 1 `i == -> . _input 2 `i -> 1 `i 870  ]
+[e ) . `E498 5 ]
+[e $UE 859  ]
+[e $U 871  ]
+"59
+[; ;./methods.h: 59:     else if (input.phaseU == 0 && input.phaseV == 0 && input.phaseW == 1) return State6;
+[e :U 870 ]
+[e $ ! && && == -> . _input 0 `i -> 0 `i == -> . _input 1 `i -> 0 `i == -> . _input 2 `i -> 1 `i 872  ]
+[e ) . `E498 6 ]
+[e $UE 859  ]
 [e $U 873  ]
-{
-"88
-[; ;main.c: 88:     case State1:
-[e :U 874 ]
-"90
-[; ;main.c: 90:         output.signalA_H = 1;
-[e = . _output 0 -> -> 1 `i `uc ]
-"91
-[; ;main.c: 91:         output.signalA_L = 0;
-[e = . _output 1 -> -> 0 `i `uc ]
-"92
-[; ;main.c: 92:         output.signalB_H = 0;
-[e = . _output 2 -> -> 0 `i `uc ]
-"93
-[; ;main.c: 93:         output.signalB_L = 0;
-[e = . _output 3 -> -> 0 `i `uc ]
-"94
-[; ;main.c: 94:         output.signalC_H = 1;
-[e = . _output 4 -> -> 1 `i `uc ]
-"95
-[; ;main.c: 95:         output.signalC_L = 0;
-[e = . _output 5 -> -> 0 `i `uc ]
-"96
-[; ;main.c: 96:         return output;
-[e ) _output ]
-[e $UE 871  ]
-"98
-[; ;main.c: 98:     case State2:
-[e :U 875 ]
-"100
-[; ;main.c: 100:         output.signalA_H = 1;
-[e = . _output 0 -> -> 1 `i `uc ]
-"101
-[; ;main.c: 101:         output.signalA_L = 0;
-[e = . _output 1 -> -> 0 `i `uc ]
-"102
-[; ;main.c: 102:         output.signalB_H = 0;
-[e = . _output 2 -> -> 0 `i `uc ]
-"103
-[; ;main.c: 103:         output.signalB_L = 0;
-[e = . _output 3 -> -> 0 `i `uc ]
-"104
-[; ;main.c: 104:         output.signalC_H = 0;
-[e = . _output 4 -> -> 0 `i `uc ]
-"105
-[; ;main.c: 105:         output.signalC_L = 1;
-[e = . _output 5 -> -> 1 `i `uc ]
-"106
-[; ;main.c: 106:         return output;
-[e ) _output ]
-[e $UE 871  ]
-"108
-[; ;main.c: 108:     case State3:
-[e :U 876 ]
-"110
-[; ;main.c: 110:         output.signalA_H = 0;
-[e = . _output 0 -> -> 0 `i `uc ]
-"111
-[; ;main.c: 111:         output.signalA_L = 1;
-[e = . _output 1 -> -> 1 `i `uc ]
-"112
-[; ;main.c: 112:         output.signalB_H = 0;
-[e = . _output 2 -> -> 0 `i `uc ]
-"113
-[; ;main.c: 113:         output.signalB_L = 0;
-[e = . _output 3 -> -> 0 `i `uc ]
-"114
-[; ;main.c: 114:         output.signalC_H = 0;
-[e = . _output 4 -> -> 0 `i `uc ]
-"115
-[; ;main.c: 115:         output.signalC_L = 1;
-[e = . _output 5 -> -> 1 `i `uc ]
-"116
-[; ;main.c: 116:         return output;
-[e ) _output ]
-[e $UE 871  ]
-"118
-[; ;main.c: 118:     case State4:
-[e :U 877 ]
-"120
-[; ;main.c: 120:         output.signalA_H = 0;
-[e = . _output 0 -> -> 0 `i `uc ]
-"121
-[; ;main.c: 121:         output.signalA_L = 1;
-[e = . _output 1 -> -> 1 `i `uc ]
-"122
-[; ;main.c: 122:         output.signalB_H = 0;
-[e = . _output 2 -> -> 0 `i `uc ]
-"123
-[; ;main.c: 123:         output.signalB_L = 1;
-[e = . _output 3 -> -> 1 `i `uc ]
-"124
-[; ;main.c: 124:         output.signalC_H = 0;
-[e = . _output 4 -> -> 0 `i `uc ]
-"125
-[; ;main.c: 125:         output.signalC_L = 0;
-[e = . _output 5 -> -> 0 `i `uc ]
-"126
-[; ;main.c: 126:         return output;
-[e ) _output ]
-[e $UE 871  ]
-"128
-[; ;main.c: 128:     case State5:
-[e :U 878 ]
-"130
-[; ;main.c: 130:         output.signalA_H = 0;
-[e = . _output 0 -> -> 0 `i `uc ]
-"131
-[; ;main.c: 131:         output.signalA_L = 0;
-[e = . _output 1 -> -> 0 `i `uc ]
-"132
-[; ;main.c: 132:         output.signalB_H = 1;
-[e = . _output 2 -> -> 1 `i `uc ]
-"133
-[; ;main.c: 133:         output.signalB_L = 1;
-[e = . _output 3 -> -> 1 `i `uc ]
-"134
-[; ;main.c: 134:         output.signalC_H = 0;
-[e = . _output 4 -> -> 0 `i `uc ]
-"135
-[; ;main.c: 135:         output.signalC_L = 0;
-[e = . _output 5 -> -> 0 `i `uc ]
-"136
-[; ;main.c: 136:         return output;
-[e ) _output ]
-[e $UE 871  ]
-"138
-[; ;main.c: 138:     case State6:
-[e :U 879 ]
-"140
-[; ;main.c: 140:         output.signalA_H = 0;
-[e = . _output 0 -> -> 0 `i `uc ]
-"141
-[; ;main.c: 141:         output.signalA_L = 0;
-[e = . _output 1 -> -> 0 `i `uc ]
-"142
-[; ;main.c: 142:         output.signalB_H = 1;
-[e = . _output 2 -> -> 1 `i `uc ]
-"143
-[; ;main.c: 143:         output.signalB_L = 0;
-[e = . _output 3 -> -> 0 `i `uc ]
-"144
-[; ;main.c: 144:         output.signalC_H = 1;
-[e = . _output 4 -> -> 1 `i `uc ]
-"145
-[; ;main.c: 145:         output.signalC_L = 0;
-[e = . _output 5 -> -> 0 `i `uc ]
-"146
-[; ;main.c: 146:         return output;
-[e ) _output ]
-[e $UE 871  ]
-"149
-[; ;main.c: 149:     default:
-[e :U 880 ]
-"150
-[; ;main.c: 150:         output.signalA_H = 0;
-[e = . _output 0 -> -> 0 `i `uc ]
-"151
-[; ;main.c: 151:         output.signalA_L = 0;
-[e = . _output 1 -> -> 0 `i `uc ]
-"152
-[; ;main.c: 152:         output.signalB_H = 0;
-[e = . _output 2 -> -> 0 `i `uc ]
-"153
-[; ;main.c: 153:         output.signalB_L = 0;
-[e = . _output 3 -> -> 0 `i `uc ]
-"154
-[; ;main.c: 154:         output.signalC_H = 0;
-[e = . _output 4 -> -> 0 `i `uc ]
-"155
-[; ;main.c: 155:         output.signalC_L = 0;
-[e = . _output 5 -> -> 0 `i `uc ]
-"156
-[; ;main.c: 156:         return output;
-[e ) _output ]
-[e $UE 871  ]
-"157
-[; ;main.c: 157:     }
-}
-[e $U 872  ]
-[e :U 873 ]
-[e [\ -> _currentState `ui , $ -> . `E6327 1 `ui 874
- , $ -> . `E6327 2 `ui 875
- , $ -> . `E6327 3 `ui 876
- , $ -> . `E6327 4 `ui 877
- , $ -> . `E6327 5 `ui 878
- , $ -> . `E6327 6 `ui 879
- 880 ]
+"61
+[; ;./methods.h: 61:     else return OFF;
 [e :U 872 ]
-"159
-[; ;main.c: 159: }
-[e :UE 871 ]
+[e ) . `E498 0 ]
+[e $UE 859  ]
+[e :U 873 ]
+[e :U 871 ]
+[e :U 869 ]
+[e :U 867 ]
+[e :U 865 ]
+[e :U 863 ]
+[e :U 861 ]
+"62
+[; ;./methods.h: 62: }
+[e :UE 859 ]
 }
-"162
-[; ;main.c: 162: void writePWM(PWMSignalOut output) {
-[v _writePWM `(v ~T0 @X0 1 ef1`S855 ]
+"65
+[; ;./methods.h: 65: PWMSignalOut setCWSwitching(SwitchingState currentState) {
+[v _setCWSwitching `(S9 ~T0 @X0 1 ef1`E498 ]
+{
+[e :U _setCWSwitching ]
+[v _currentState `E498 ~T0 @X0 1 r1 ]
+[f ]
+"67
+[; ;./methods.h: 67:     PWMSignalOut output;
+[v _output `S9 ~T0 @X0 1 a ]
+"69
+[; ;./methods.h: 69:     switch(currentState) {
+[e $U 876  ]
+{
+"71
+[; ;./methods.h: 71:     case State1:
+[e :U 877 ]
+"73
+[; ;./methods.h: 73:         output.signalA_H = 1;
+[e = . _output 0 -> -> 1 `i `uc ]
+"74
+[; ;./methods.h: 74:         output.signalA_L = 0;
+[e = . _output 1 -> -> 0 `i `uc ]
+"75
+[; ;./methods.h: 75:         output.signalB_H = 0;
+[e = . _output 2 -> -> 0 `i `uc ]
+"76
+[; ;./methods.h: 76:         output.signalB_L = 1;
+[e = . _output 3 -> -> 1 `i `uc ]
+"77
+[; ;./methods.h: 77:         output.signalC_H = 0;
+[e = . _output 4 -> -> 0 `i `uc ]
+"78
+[; ;./methods.h: 78:         output.signalC_L = 0;
+[e = . _output 5 -> -> 0 `i `uc ]
+"79
+[; ;./methods.h: 79:         return output;
+[e ) _output ]
+[e $UE 874  ]
+"81
+[; ;./methods.h: 81:     case State2:
+[e :U 878 ]
+"83
+[; ;./methods.h: 83:         output.signalA_H = 1;
+[e = . _output 0 -> -> 1 `i `uc ]
+"84
+[; ;./methods.h: 84:         output.signalA_L = 0;
+[e = . _output 1 -> -> 0 `i `uc ]
+"85
+[; ;./methods.h: 85:         output.signalB_H = 0;
+[e = . _output 2 -> -> 0 `i `uc ]
+"86
+[; ;./methods.h: 86:         output.signalB_L = 0;
+[e = . _output 3 -> -> 0 `i `uc ]
+"87
+[; ;./methods.h: 87:         output.signalC_H = 0;
+[e = . _output 4 -> -> 0 `i `uc ]
+"88
+[; ;./methods.h: 88:         output.signalC_L = 1;
+[e = . _output 5 -> -> 1 `i `uc ]
+"89
+[; ;./methods.h: 89:         return output;
+[e ) _output ]
+[e $UE 874  ]
+"91
+[; ;./methods.h: 91:     case State3:
+[e :U 879 ]
+"93
+[; ;./methods.h: 93:         output.signalA_H = 0;
+[e = . _output 0 -> -> 0 `i `uc ]
+"94
+[; ;./methods.h: 94:         output.signalA_L = 0;
+[e = . _output 1 -> -> 0 `i `uc ]
+"95
+[; ;./methods.h: 95:         output.signalB_H = 1;
+[e = . _output 2 -> -> 1 `i `uc ]
+"96
+[; ;./methods.h: 96:         output.signalB_L = 0;
+[e = . _output 3 -> -> 0 `i `uc ]
+"97
+[; ;./methods.h: 97:         output.signalC_H = 0;
+[e = . _output 4 -> -> 0 `i `uc ]
+"98
+[; ;./methods.h: 98:         output.signalC_L = 1;
+[e = . _output 5 -> -> 1 `i `uc ]
+"99
+[; ;./methods.h: 99:         return output;
+[e ) _output ]
+[e $UE 874  ]
+"101
+[; ;./methods.h: 101:     case State4:
+[e :U 880 ]
+"103
+[; ;./methods.h: 103:         output.signalA_H = 0;
+[e = . _output 0 -> -> 0 `i `uc ]
+"104
+[; ;./methods.h: 104:         output.signalA_L = 1;
+[e = . _output 1 -> -> 1 `i `uc ]
+"105
+[; ;./methods.h: 105:         output.signalB_H = 1;
+[e = . _output 2 -> -> 1 `i `uc ]
+"106
+[; ;./methods.h: 106:         output.signalB_L = 0;
+[e = . _output 3 -> -> 0 `i `uc ]
+"107
+[; ;./methods.h: 107:         output.signalC_H = 0;
+[e = . _output 4 -> -> 0 `i `uc ]
+"108
+[; ;./methods.h: 108:         output.signalC_L = 0;
+[e = . _output 5 -> -> 0 `i `uc ]
+"109
+[; ;./methods.h: 109:         return output;
+[e ) _output ]
+[e $UE 874  ]
+"111
+[; ;./methods.h: 111:     case State5:
+[e :U 881 ]
+"113
+[; ;./methods.h: 113:         output.signalA_H = 0;
+[e = . _output 0 -> -> 0 `i `uc ]
+"114
+[; ;./methods.h: 114:         output.signalA_L = 1;
+[e = . _output 1 -> -> 1 `i `uc ]
+"115
+[; ;./methods.h: 115:         output.signalB_H = 0;
+[e = . _output 2 -> -> 0 `i `uc ]
+"116
+[; ;./methods.h: 116:         output.signalB_L = 0;
+[e = . _output 3 -> -> 0 `i `uc ]
+"117
+[; ;./methods.h: 117:         output.signalC_H = 1;
+[e = . _output 4 -> -> 1 `i `uc ]
+"118
+[; ;./methods.h: 118:         output.signalC_L = 0;
+[e = . _output 5 -> -> 0 `i `uc ]
+"119
+[; ;./methods.h: 119:         return output;
+[e ) _output ]
+[e $UE 874  ]
+"121
+[; ;./methods.h: 121:     case State6:
+[e :U 882 ]
+"123
+[; ;./methods.h: 123:         output.signalA_H = 0;
+[e = . _output 0 -> -> 0 `i `uc ]
+"124
+[; ;./methods.h: 124:         output.signalA_L = 0;
+[e = . _output 1 -> -> 0 `i `uc ]
+"125
+[; ;./methods.h: 125:         output.signalB_H = 0;
+[e = . _output 2 -> -> 0 `i `uc ]
+"126
+[; ;./methods.h: 126:         output.signalB_L = 1;
+[e = . _output 3 -> -> 1 `i `uc ]
+"127
+[; ;./methods.h: 127:         output.signalC_H = 1;
+[e = . _output 4 -> -> 1 `i `uc ]
+"128
+[; ;./methods.h: 128:         output.signalC_L = 0;
+[e = . _output 5 -> -> 0 `i `uc ]
+"129
+[; ;./methods.h: 129:         return output;
+[e ) _output ]
+[e $UE 874  ]
+"132
+[; ;./methods.h: 132:     default:
+[e :U 883 ]
+"133
+[; ;./methods.h: 133:         output.signalA_H = 0;
+[e = . _output 0 -> -> 0 `i `uc ]
+"134
+[; ;./methods.h: 134:         output.signalA_L = 0;
+[e = . _output 1 -> -> 0 `i `uc ]
+"135
+[; ;./methods.h: 135:         output.signalB_H = 0;
+[e = . _output 2 -> -> 0 `i `uc ]
+"136
+[; ;./methods.h: 136:         output.signalB_L = 0;
+[e = . _output 3 -> -> 0 `i `uc ]
+"137
+[; ;./methods.h: 137:         output.signalC_H = 0;
+[e = . _output 4 -> -> 0 `i `uc ]
+"138
+[; ;./methods.h: 138:         output.signalC_L = 0;
+[e = . _output 5 -> -> 0 `i `uc ]
+"139
+[; ;./methods.h: 139:         return output;
+[e ) _output ]
+[e $UE 874  ]
+"140
+[; ;./methods.h: 140:     }
+}
+[e $U 875  ]
+[e :U 876 ]
+[e [\ -> _currentState `ui , $ -> . `E498 1 `ui 877
+ , $ -> . `E498 2 `ui 878
+ , $ -> . `E498 3 `ui 879
+ , $ -> . `E498 4 `ui 880
+ , $ -> . `E498 5 `ui 881
+ , $ -> . `E498 6 `ui 882
+ 883 ]
+[e :U 875 ]
+"142
+[; ;./methods.h: 142: }
+[e :UE 874 ]
+}
+"145
+[; ;./methods.h: 145: PWMSignalOut setCCWSwitching(SwitchingState currentState) {
+[v _setCCWSwitching `(S9 ~T0 @X0 1 ef1`E498 ]
+{
+[e :U _setCCWSwitching ]
+[v _currentState `E498 ~T0 @X0 1 r1 ]
+[f ]
+"147
+[; ;./methods.h: 147:     PWMSignalOut output;
+[v _output `S9 ~T0 @X0 1 a ]
+"149
+[; ;./methods.h: 149:     switch(currentState) {
+[e $U 886  ]
+{
+"151
+[; ;./methods.h: 151:     case State1:
+[e :U 887 ]
+"153
+[; ;./methods.h: 153:         output.signalA_H = 0;
+[e = . _output 0 -> -> 0 `i `uc ]
+"154
+[; ;./methods.h: 154:         output.signalA_L = 1;
+[e = . _output 1 -> -> 1 `i `uc ]
+"155
+[; ;./methods.h: 155:         output.signalB_H = 1;
+[e = . _output 2 -> -> 1 `i `uc ]
+"156
+[; ;./methods.h: 156:         output.signalB_L = 0;
+[e = . _output 3 -> -> 0 `i `uc ]
+"157
+[; ;./methods.h: 157:         output.signalC_H = 0;
+[e = . _output 4 -> -> 0 `i `uc ]
+"158
+[; ;./methods.h: 158:         output.signalC_L = 0;
+[e = . _output 5 -> -> 0 `i `uc ]
+"159
+[; ;./methods.h: 159:         return output;
+[e ) _output ]
+[e $UE 884  ]
+"161
+[; ;./methods.h: 161:     case State2:
+[e :U 888 ]
+"163
+[; ;./methods.h: 163:         output.signalA_H = 0;
+[e = . _output 0 -> -> 0 `i `uc ]
+"164
+[; ;./methods.h: 164:         output.signalA_L = 1;
+[e = . _output 1 -> -> 1 `i `uc ]
+"165
+[; ;./methods.h: 165:         output.signalB_H = 0;
+[e = . _output 2 -> -> 0 `i `uc ]
+"166
+[; ;./methods.h: 166:         output.signalB_L = 0;
+[e = . _output 3 -> -> 0 `i `uc ]
+"167
+[; ;./methods.h: 167:         output.signalC_H = 1;
+[e = . _output 4 -> -> 1 `i `uc ]
+"168
+[; ;./methods.h: 168:         output.signalC_L = 0;
+[e = . _output 5 -> -> 0 `i `uc ]
+"169
+[; ;./methods.h: 169:         return output;
+[e ) _output ]
+[e $UE 884  ]
+"171
+[; ;./methods.h: 171:     case State3:
+[e :U 889 ]
+"173
+[; ;./methods.h: 173:         output.signalA_H = 0;
+[e = . _output 0 -> -> 0 `i `uc ]
+"174
+[; ;./methods.h: 174:         output.signalA_L = 0;
+[e = . _output 1 -> -> 0 `i `uc ]
+"175
+[; ;./methods.h: 175:         output.signalB_H = 0;
+[e = . _output 2 -> -> 0 `i `uc ]
+"176
+[; ;./methods.h: 176:         output.signalB_L = 1;
+[e = . _output 3 -> -> 1 `i `uc ]
+"177
+[; ;./methods.h: 177:         output.signalC_H = 1;
+[e = . _output 4 -> -> 1 `i `uc ]
+"178
+[; ;./methods.h: 178:         output.signalC_L = 0;
+[e = . _output 5 -> -> 0 `i `uc ]
+"179
+[; ;./methods.h: 179:         return output;
+[e ) _output ]
+[e $UE 884  ]
+"181
+[; ;./methods.h: 181:     case State4:
+[e :U 890 ]
+"183
+[; ;./methods.h: 183:         output.signalA_H = 1;
+[e = . _output 0 -> -> 1 `i `uc ]
+"184
+[; ;./methods.h: 184:         output.signalA_L = 0;
+[e = . _output 1 -> -> 0 `i `uc ]
+"185
+[; ;./methods.h: 185:         output.signalB_H = 0;
+[e = . _output 2 -> -> 0 `i `uc ]
+"186
+[; ;./methods.h: 186:         output.signalB_L = 1;
+[e = . _output 3 -> -> 1 `i `uc ]
+"187
+[; ;./methods.h: 187:         output.signalC_H = 0;
+[e = . _output 4 -> -> 0 `i `uc ]
+"188
+[; ;./methods.h: 188:         output.signalC_L = 0;
+[e = . _output 5 -> -> 0 `i `uc ]
+"189
+[; ;./methods.h: 189:         return output;
+[e ) _output ]
+[e $UE 884  ]
+"191
+[; ;./methods.h: 191:     case State5:
+[e :U 891 ]
+"193
+[; ;./methods.h: 193:         output.signalA_H = 1;
+[e = . _output 0 -> -> 1 `i `uc ]
+"194
+[; ;./methods.h: 194:         output.signalA_L = 0;
+[e = . _output 1 -> -> 0 `i `uc ]
+"195
+[; ;./methods.h: 195:         output.signalB_H = 0;
+[e = . _output 2 -> -> 0 `i `uc ]
+"196
+[; ;./methods.h: 196:         output.signalB_L = 0;
+[e = . _output 3 -> -> 0 `i `uc ]
+"197
+[; ;./methods.h: 197:         output.signalC_H = 0;
+[e = . _output 4 -> -> 0 `i `uc ]
+"198
+[; ;./methods.h: 198:         output.signalC_L = 1;
+[e = . _output 5 -> -> 1 `i `uc ]
+"199
+[; ;./methods.h: 199:         return output;
+[e ) _output ]
+[e $UE 884  ]
+"201
+[; ;./methods.h: 201:     case State6:
+[e :U 892 ]
+"203
+[; ;./methods.h: 203:         output.signalA_H = 0;
+[e = . _output 0 -> -> 0 `i `uc ]
+"204
+[; ;./methods.h: 204:         output.signalA_L = 0;
+[e = . _output 1 -> -> 0 `i `uc ]
+"205
+[; ;./methods.h: 205:         output.signalB_H = 1;
+[e = . _output 2 -> -> 1 `i `uc ]
+"206
+[; ;./methods.h: 206:         output.signalB_L = 0;
+[e = . _output 3 -> -> 0 `i `uc ]
+"207
+[; ;./methods.h: 207:         output.signalC_H = 0;
+[e = . _output 4 -> -> 0 `i `uc ]
+"208
+[; ;./methods.h: 208:         output.signalC_L = 1;
+[e = . _output 5 -> -> 1 `i `uc ]
+"209
+[; ;./methods.h: 209:         return output;
+[e ) _output ]
+[e $UE 884  ]
+"212
+[; ;./methods.h: 212:     default:
+[e :U 893 ]
+"213
+[; ;./methods.h: 213:         output.signalA_H = 0;
+[e = . _output 0 -> -> 0 `i `uc ]
+"214
+[; ;./methods.h: 214:         output.signalA_L = 0;
+[e = . _output 1 -> -> 0 `i `uc ]
+"215
+[; ;./methods.h: 215:         output.signalB_H = 0;
+[e = . _output 2 -> -> 0 `i `uc ]
+"216
+[; ;./methods.h: 216:         output.signalB_L = 0;
+[e = . _output 3 -> -> 0 `i `uc ]
+"217
+[; ;./methods.h: 217:         output.signalC_H = 0;
+[e = . _output 4 -> -> 0 `i `uc ]
+"218
+[; ;./methods.h: 218:         output.signalC_L = 0;
+[e = . _output 5 -> -> 0 `i `uc ]
+"219
+[; ;./methods.h: 219:         return output;
+[e ) _output ]
+[e $UE 884  ]
+"220
+[; ;./methods.h: 220:     }
+}
+[e $U 885  ]
+[e :U 886 ]
+[e [\ -> _currentState `ui , $ -> . `E498 1 `ui 887
+ , $ -> . `E498 2 `ui 888
+ , $ -> . `E498 3 `ui 889
+ , $ -> . `E498 4 `ui 890
+ , $ -> . `E498 5 `ui 891
+ , $ -> . `E498 6 `ui 892
+ 893 ]
+[e :U 885 ]
+"222
+[; ;./methods.h: 222: }
+[e :UE 884 ]
+}
+"225
+[; ;./methods.h: 225: void writePWM(PWMSignalOut output) {
+[v _writePWM `(v ~T0 @X0 1 ef1`S9 ]
 {
 [e :U _writePWM ]
-[v _output `S855 ~T0 @X0 1 r1 ]
+[v _output `S9 ~T0 @X0 1 r1 ]
 [f ]
-"164
-[; ;main.c: 164:     LATBbits.LATB1 = output.signalA_H;
+"227
+[; ;./methods.h: 227:     LATBbits.LATB1 = output.signalA_H;
 [e = . . _LATBbits 0 1 . _output 0 ]
-"165
-[; ;main.c: 165:     LATBbits.LATB0 = output.signalA_L;
+"228
+[; ;./methods.h: 228:     LATBbits.LATB0 = output.signalA_L;
 [e = . . _LATBbits 0 0 . _output 1 ]
-"166
-[; ;main.c: 166:     LATDbits.LATD7 = output.signalB_H;
+"229
+[; ;./methods.h: 229:     LATDbits.LATD7 = output.signalB_H;
 [e = . . _LATDbits 0 7 . _output 2 ]
-"167
-[; ;main.c: 167:     LATDbits.LATD6 = output.signalB_L;
+"230
+[; ;./methods.h: 230:     LATDbits.LATD6 = output.signalB_L;
 [e = . . _LATDbits 0 6 . _output 3 ]
-"168
-[; ;main.c: 168:     LATDbits.LATD5 = output.signalC_H;
+"231
+[; ;./methods.h: 231:     LATDbits.LATD5 = output.signalC_H;
 [e = . . _LATDbits 0 5 . _output 4 ]
-"169
-[; ;main.c: 169:     LATDbits.LATD4 = output.signalC_L;
+"232
+[; ;./methods.h: 232:     LATDbits.LATD4 = output.signalC_L;
 [e = . . _LATDbits 0 4 . _output 5 ]
-"171
-[; ;main.c: 171: }
-[e :UE 881 ]
+"234
+[; ;./methods.h: 234: }
+[e :UE 894 ]
 }
-"174
-[; ;main.c: 174: void TMR0_DefaultInterruptHandler() {
-[v _TMR0_DefaultInterruptHandler `(v ~T0 @X0 1 ef ]
+"237
+[; ;./methods.h: 237: void high_priority_interrupt_tmr0_isr(void) {
+[v _high_priority_interrupt_tmr0_isr `(v ~T0 @X0 1 ef ]
 {
-[e :U _TMR0_DefaultInterruptHandler ]
+[e :U _high_priority_interrupt_tmr0_isr ]
 [f ]
-"176
-[; ;main.c: 176:     INTCONbits.TMR0IF = 0;
+"239
+[; ;./methods.h: 239:     INTCONbits.TMR0IF = 0;
 [e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-"185
-[; ;main.c: 185: }
-[e :UE 882 ]
+"242
+[; ;./methods.h: 242:     HallData input = readHallData();
+[v _input `S8 ~T0 @X0 1 a ]
+[e = _input ( _readHallData ..  ]
+"244
+[; ;./methods.h: 244:     SwitchingState state = interpretHallData(input);
+[v _state `E498 ~T0 @X0 1 a ]
+[e = _state ( _interpretHallData (1 _input ]
+"246
+[; ;./methods.h: 246:     PWMSignalOut output = setCWSwitching(state);
+[v _output `S9 ~T0 @X0 1 a ]
+[e = _output ( _setCWSwitching (1 _state ]
+"248
+[; ;./methods.h: 248:     writePWM(output);
+[e ( _writePWM (1 _output ]
+"249
+[; ;./methods.h: 249: }
+[e :UE 895 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"187
-[; ;main.c: 187: void main() {
+"13 main.c
+[; ;main.c: 13: void main() {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"189
-[; ;main.c: 189:     INTCONbits.TMR0IE = 1;
-[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
-"190
-[; ;main.c: 190:     INTCONbits.GIE = 1;
-[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-"192
-[; ;main.c: 192:     for(;;) {
+"15
+[; ;main.c: 15:     initialize();
+[e ( _initialize ..  ]
+"17
+[; ;main.c: 17:     for(;;) {
 {
-[e :U 884 ]
+[e :U 897 ]
 {
-"194
-[; ;main.c: 194:         INTCONbits.TMR0IE = 0;
-[e = . . _INTCONbits 0 5 -> -> 0 `i `uc ]
-"196
-[; ;main.c: 196:         while(PORTAbits.RA3 == 1);
-[e $U 887  ]
-[e :U 888 ]
-[e :U 887 ]
-[e $ == -> . . _PORTAbits 0 3 `i -> 1 `i 888  ]
-[e :U 889 ]
-"198
-[; ;main.c: 198:         INTCONbits.TMR0IE = 1;
-[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
-"200
-[; ;main.c: 200:     }
+"25
+[; ;main.c: 25:     }
 }
-[e $U 884  ]
-[e :U 885 ]
+[e $U 897  ]
+[e :U 898 ]
 }
-"223
-[; ;main.c: 223: }
-[e :UE 883 ]
+"48
+[; ;main.c: 48: }
+[e :UE 896 ]
 }

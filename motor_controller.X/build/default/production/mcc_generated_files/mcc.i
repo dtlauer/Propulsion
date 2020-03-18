@@ -9626,6 +9626,11 @@ typedef uint32_t uint_fast32_t;
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdbool.h" 1 3
 # 53 "mcc_generated_files/mcc.h" 2
 
+# 1 "mcc_generated_files/interrupt_manager.h" 1
+# 110 "mcc_generated_files/interrupt_manager.h"
+void INTERRUPT_Initialize (void);
+# 54 "mcc_generated_files/mcc.h" 2
+
 # 1 "mcc_generated_files/adc.h" 1
 # 72 "mcc_generated_files/adc.h"
 typedef uint16_t adc_result_t;
@@ -9659,10 +9664,33 @@ adc_result_t ADC_GetConversionResult(void);
 adc_result_t ADC_GetConversion(adc_channel_t channel);
 # 315 "mcc_generated_files/adc.h"
 void ADC_TemperatureAcquisitionDelay(void);
-# 54 "mcc_generated_files/mcc.h" 2
-# 69 "mcc_generated_files/mcc.h"
+# 55 "mcc_generated_files/mcc.h" 2
+
+# 1 "mcc_generated_files/tmr0.h" 1
+# 100 "mcc_generated_files/tmr0.h"
+void TMR0_Initialize(void);
+# 129 "mcc_generated_files/tmr0.h"
+void TMR0_StartTimer(void);
+# 161 "mcc_generated_files/tmr0.h"
+void TMR0_StopTimer(void);
+# 197 "mcc_generated_files/tmr0.h"
+uint16_t TMR0_ReadTimer(void);
+# 236 "mcc_generated_files/tmr0.h"
+void TMR0_WriteTimer(uint16_t timerVal);
+# 272 "mcc_generated_files/tmr0.h"
+void TMR0_Reload(void);
+# 290 "mcc_generated_files/tmr0.h"
+void TMR0_ISR(void);
+# 309 "mcc_generated_files/tmr0.h"
+ void TMR0_SetInterruptHandler(void (* InterruptHandler)(void));
+# 327 "mcc_generated_files/tmr0.h"
+extern void (*TMR0_InterruptHandler)(void);
+# 345 "mcc_generated_files/tmr0.h"
+void TMR0_DefaultInterruptHandler(void);
+# 56 "mcc_generated_files/mcc.h" 2
+# 71 "mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 82 "mcc_generated_files/mcc.h"
+# 84 "mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
 # 47 "mcc_generated_files/mcc.c" 2
 
@@ -9671,15 +9699,17 @@ void OSCILLATOR_Initialize(void);
 void SYSTEM_Initialize(void)
 {
 
+    INTERRUPT_Initialize();
     PIN_MANAGER_Initialize();
     OSCILLATOR_Initialize();
     ADC_Initialize();
+    TMR0_Initialize();
 }
 
 void OSCILLATOR_Initialize(void)
 {
 
-    OSCCON = 0x30;
+    OSCCON = 0x70;
 
     OSCCON2 = 0x04;
 

@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "mcc_generated_files/interrupt_manager.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,24 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
+# 1 "mcc_generated_files/interrupt_manager.c" 2
+# 49 "mcc_generated_files/interrupt_manager.c"
+# 1 "mcc_generated_files/interrupt_manager.h" 1
+# 110 "mcc_generated_files/interrupt_manager.h"
+void INTERRUPT_Initialize (void);
+# 49 "mcc_generated_files/interrupt_manager.c" 2
+
+# 1 "mcc_generated_files/mcc.h" 1
+# 49 "mcc_generated_files/mcc.h"
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 1 3
+# 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 3
+extern const char __xc8_OPTIM_SPEED;
+
+extern double __fpnormalize(double);
+
+
+
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\xc8debug.h" 1 3
 
 
 
@@ -90,288 +107,15 @@ udiv_t udiv (unsigned int, unsigned int);
 uldiv_t uldiv (unsigned long, unsigned long);
 # 104 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdlib.h" 3
 size_t __ctype_get_mb_cur_max(void);
-# 4 "main.c" 2
+# 4 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\xc8debug.h" 2 3
 
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdint.h" 1 3
-# 22 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdint.h" 3
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 135 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned long uintptr_t;
-# 150 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long intptr_t;
-# 166 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef signed char int8_t;
 
 
 
 
-typedef short int16_t;
-# 181 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long int32_t;
 
 
 
-
-
-typedef long long int64_t;
-# 196 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long long intmax_t;
-
-
-
-
-
-typedef unsigned char uint8_t;
-
-
-
-
-typedef unsigned short uint16_t;
-# 217 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned long uint32_t;
-
-
-
-
-
-typedef unsigned long long uint64_t;
-# 237 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned long long uintmax_t;
-# 22 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdint.h" 2 3
-
-
-typedef int8_t int_fast8_t;
-
-typedef int64_t int_fast64_t;
-
-
-typedef int8_t int_least8_t;
-typedef int16_t int_least16_t;
-
-typedef int24_t int_least24_t;
-
-typedef int32_t int_least32_t;
-
-typedef int64_t int_least64_t;
-
-
-typedef uint8_t uint_fast8_t;
-
-typedef uint64_t uint_fast64_t;
-
-
-typedef uint8_t uint_least8_t;
-typedef uint16_t uint_least16_t;
-
-typedef uint24_t uint_least24_t;
-
-typedef uint32_t uint_least32_t;
-
-typedef uint64_t uint_least64_t;
-# 155 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdint.h" 3
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/stdint.h" 1 3
-typedef int32_t int_fast16_t;
-typedef int32_t int_fast32_t;
-typedef uint32_t uint_fast16_t;
-typedef uint32_t uint_fast32_t;
-# 155 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdint.h" 2 3
-# 5 "main.c" 2
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdio.h" 1 3
-# 24 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdio.h" 3
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 10 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef void * va_list[1];
-
-
-
-
-typedef void * __isoc_va_list[1];
-# 145 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long ssize_t;
-# 254 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long long off_t;
-# 407 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef struct _IO_FILE FILE;
-# 24 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdio.h" 2 3
-# 52 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdio.h" 3
-typedef union _G_fpos64_t {
- char __opaque[16];
- double __align;
-} fpos_t;
-
-extern FILE *const stdin;
-extern FILE *const stdout;
-extern FILE *const stderr;
-
-
-
-
-
-FILE *fopen(const char *restrict, const char *restrict);
-FILE *freopen(const char *restrict, const char *restrict, FILE *restrict);
-int fclose(FILE *);
-
-int remove(const char *);
-int rename(const char *, const char *);
-
-int feof(FILE *);
-int ferror(FILE *);
-int fflush(FILE *);
-void clearerr(FILE *);
-
-int fseek(FILE *, long, int);
-long ftell(FILE *);
-void rewind(FILE *);
-
-int fgetpos(FILE *restrict, fpos_t *restrict);
-int fsetpos(FILE *, const fpos_t *);
-
-size_t fread(void *restrict, size_t, size_t, FILE *restrict);
-size_t fwrite(const void *restrict, size_t, size_t, FILE *restrict);
-
-int fgetc(FILE *);
-int getc(FILE *);
-int getchar(void);
-int ungetc(int, FILE *);
-
-int fputc(int, FILE *);
-int putc(int, FILE *);
-int putchar(int);
-
-char *fgets(char *restrict, int, FILE *restrict);
-
-char *gets(char *);
-
-
-int fputs(const char *restrict, FILE *restrict);
-int puts(const char *);
-
-
-#pragma printf_check(printf) const
-#pragma printf_check(vprintf) const
-#pragma printf_check(sprintf) const
-#pragma printf_check(snprintf) const
-#pragma printf_check(vsprintf) const
-#pragma printf_check(vsnprintf) const
-
-
-int printf(const char *restrict, ...);
-int fprintf(FILE *restrict, const char *restrict, ...);
-int sprintf(char *restrict, const char *restrict, ...);
-int snprintf(char *restrict, size_t, const char *restrict, ...);
-
-int vprintf(const char *restrict, __isoc_va_list);
-int vfprintf(FILE *restrict, const char *restrict, __isoc_va_list);
-int vsprintf(char *restrict, const char *restrict, __isoc_va_list);
-int vsnprintf(char *restrict, size_t, const char *restrict, __isoc_va_list);
-
-int scanf(const char *restrict, ...);
-int fscanf(FILE *restrict, const char *restrict, ...);
-int sscanf(const char *restrict, const char *restrict, ...);
-int vscanf(const char *restrict, __isoc_va_list);
-int vfscanf(FILE *restrict, const char *restrict, __isoc_va_list);
-int vsscanf(const char *restrict, const char *restrict, __isoc_va_list);
-
-void perror(const char *);
-
-int setvbuf(FILE *restrict, char *restrict, int, size_t);
-void setbuf(FILE *restrict, char *restrict);
-
-char *tmpnam(char *);
-FILE *tmpfile(void);
-
-
-
-
-FILE *fmemopen(void *restrict, size_t, const char *restrict);
-FILE *open_memstream(char **, size_t *);
-FILE *fdopen(int, const char *);
-FILE *popen(const char *, const char *);
-int pclose(FILE *);
-int fileno(FILE *);
-int fseeko(FILE *, off_t, int);
-off_t ftello(FILE *);
-int dprintf(int, const char *restrict, ...);
-int vdprintf(int, const char *restrict, __isoc_va_list);
-void flockfile(FILE *);
-int ftrylockfile(FILE *);
-void funlockfile(FILE *);
-int getc_unlocked(FILE *);
-int getchar_unlocked(void);
-int putc_unlocked(int, FILE *);
-int putchar_unlocked(int);
-ssize_t getdelim(char **restrict, size_t *restrict, int, FILE *restrict);
-ssize_t getline(char **restrict, size_t *restrict, FILE *restrict);
-int renameat(int, const char *, int, const char *);
-char *ctermid(char *);
-
-
-
-
-
-
-
-char *tempnam(const char *, const char *);
-# 6 "main.c" 2
-
-# 1 "./dataStructures.h" 1
-# 16 "./dataStructures.h"
-typedef struct {
-
-    uint8_t phaseU;
-    uint8_t phaseV;
-    uint8_t phaseW;
-
-} HallData;
-
-
-typedef enum {
-
-    OFF,
-    State1,
-    State2,
-    State3,
-    State4,
-    State5,
-    State6,
-
-} SwitchingState;
-
-typedef struct {
-
-    uint8_t signalA_H;
-    uint8_t signalA_L;
-    uint8_t signalB_H;
-    uint8_t signalB_L;
-    uint8_t signalC_H;
-    uint8_t signalC_L;
-
-} PWMSignalOut;
-
-typedef struct {
-
-    HallData input;
-    SwitchingState state;
-    PWMSignalOut ouput;
-
-} ControlData;
-# 7 "main.c" 2
-
-# 1 "./methods.h" 1
-# 12 "./methods.h"
-# 1 "./mcc_generated_files/mcc.h" 1
-# 49 "./mcc_generated_files/mcc.h"
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 1 3
-# 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 3
-extern const char __xc8_OPTIM_SPEED;
-
-extern double __fpnormalize(double);
-
-
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\xc8debug.h" 1 3
-# 12 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\xc8debug.h" 3
 #pragma intrinsic(__builtin_software_breakpoint)
 extern void __builtin_software_breakpoint(void);
 # 23 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 2 3
@@ -9787,29 +9531,109 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 32 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 2 3
-# 49 "./mcc_generated_files/mcc.h" 2
+# 49 "mcc_generated_files/mcc.h" 2
 
-# 1 "./mcc_generated_files/device_config.h" 1
-# 50 "./mcc_generated_files/mcc.h" 2
+# 1 "mcc_generated_files/device_config.h" 1
+# 50 "mcc_generated_files/mcc.h" 2
 
-# 1 "./mcc_generated_files/pin_manager.h" 1
-# 457 "./mcc_generated_files/pin_manager.h"
+# 1 "mcc_generated_files/pin_manager.h" 1
+# 457 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 469 "./mcc_generated_files/pin_manager.h"
+# 469 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
-# 51 "./mcc_generated_files/mcc.h" 2
+# 51 "mcc_generated_files/mcc.h" 2
 
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdint.h" 1 3
+# 22 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdint.h" 3
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 135 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned long uintptr_t;
+# 150 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long intptr_t;
+# 166 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef signed char int8_t;
+
+
+
+
+typedef short int16_t;
+# 181 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long int32_t;
+
+
+
+
+
+typedef long long int64_t;
+# 196 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long long intmax_t;
+
+
+
+
+
+typedef unsigned char uint8_t;
+
+
+
+
+typedef unsigned short uint16_t;
+# 217 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned long uint32_t;
+
+
+
+
+
+typedef unsigned long long uint64_t;
+# 237 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned long long uintmax_t;
+# 22 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdint.h" 2 3
+
+
+typedef int8_t int_fast8_t;
+
+typedef int64_t int_fast64_t;
+
+
+typedef int8_t int_least8_t;
+typedef int16_t int_least16_t;
+
+typedef int24_t int_least24_t;
+
+typedef int32_t int_least32_t;
+
+typedef int64_t int_least64_t;
+
+
+typedef uint8_t uint_fast8_t;
+
+typedef uint64_t uint_fast64_t;
+
+
+typedef uint8_t uint_least8_t;
+typedef uint16_t uint_least16_t;
+
+typedef uint24_t uint_least24_t;
+
+typedef uint32_t uint_least32_t;
+
+typedef uint64_t uint_least64_t;
+# 155 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdint.h" 3
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\bits/stdint.h" 1 3
+typedef int32_t int_fast16_t;
+typedef int32_t int_fast32_t;
+typedef uint32_t uint_fast16_t;
+typedef uint32_t uint_fast32_t;
+# 155 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdint.h" 2 3
+# 52 "mcc_generated_files/mcc.h" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdbool.h" 1 3
-# 53 "./mcc_generated_files/mcc.h" 2
+# 53 "mcc_generated_files/mcc.h" 2
 
-# 1 "./mcc_generated_files/interrupt_manager.h" 1
-# 110 "./mcc_generated_files/interrupt_manager.h"
-void INTERRUPT_Initialize (void);
-# 54 "./mcc_generated_files/mcc.h" 2
 
-# 1 "./mcc_generated_files/adc.h" 1
-# 72 "./mcc_generated_files/adc.h"
+# 1 "mcc_generated_files/adc.h" 1
+# 72 "mcc_generated_files/adc.h"
 typedef uint16_t adc_result_t;
 
 
@@ -9820,302 +9644,73 @@ typedef struct
     adc_result_t adcResult1;
     adc_result_t adcResult2;
 } adc_sync_double_result_t;
-# 95 "./mcc_generated_files/adc.h"
+# 95 "mcc_generated_files/adc.h"
 typedef enum
 {
     channel_CTMU = 0x1D,
     channel_DAC = 0x1E,
     channel_FVRBuf2 = 0x1F
 } adc_channel_t;
-# 135 "./mcc_generated_files/adc.h"
+# 135 "mcc_generated_files/adc.h"
 void ADC_Initialize(void);
-# 165 "./mcc_generated_files/adc.h"
+# 165 "mcc_generated_files/adc.h"
 void ADC_SelectChannel(adc_channel_t channel);
-# 192 "./mcc_generated_files/adc.h"
+# 192 "mcc_generated_files/adc.h"
 void ADC_StartConversion();
-# 224 "./mcc_generated_files/adc.h"
+# 224 "mcc_generated_files/adc.h"
 _Bool ADC_IsConversionDone();
-# 257 "./mcc_generated_files/adc.h"
+# 257 "mcc_generated_files/adc.h"
 adc_result_t ADC_GetConversionResult(void);
-# 287 "./mcc_generated_files/adc.h"
+# 287 "mcc_generated_files/adc.h"
 adc_result_t ADC_GetConversion(adc_channel_t channel);
-# 315 "./mcc_generated_files/adc.h"
+# 315 "mcc_generated_files/adc.h"
 void ADC_TemperatureAcquisitionDelay(void);
-# 55 "./mcc_generated_files/mcc.h" 2
+# 55 "mcc_generated_files/mcc.h" 2
 
-# 1 "./mcc_generated_files/tmr0.h" 1
-# 100 "./mcc_generated_files/tmr0.h"
+# 1 "mcc_generated_files/tmr0.h" 1
+# 100 "mcc_generated_files/tmr0.h"
 void TMR0_Initialize(void);
-# 129 "./mcc_generated_files/tmr0.h"
+# 129 "mcc_generated_files/tmr0.h"
 void TMR0_StartTimer(void);
-# 161 "./mcc_generated_files/tmr0.h"
+# 161 "mcc_generated_files/tmr0.h"
 void TMR0_StopTimer(void);
-# 197 "./mcc_generated_files/tmr0.h"
+# 197 "mcc_generated_files/tmr0.h"
 uint16_t TMR0_ReadTimer(void);
-# 236 "./mcc_generated_files/tmr0.h"
+# 236 "mcc_generated_files/tmr0.h"
 void TMR0_WriteTimer(uint16_t timerVal);
-# 272 "./mcc_generated_files/tmr0.h"
+# 272 "mcc_generated_files/tmr0.h"
 void TMR0_Reload(void);
-# 290 "./mcc_generated_files/tmr0.h"
+# 290 "mcc_generated_files/tmr0.h"
 void TMR0_ISR(void);
-# 309 "./mcc_generated_files/tmr0.h"
+# 309 "mcc_generated_files/tmr0.h"
  void TMR0_SetInterruptHandler(void (* InterruptHandler)(void));
-# 327 "./mcc_generated_files/tmr0.h"
+# 327 "mcc_generated_files/tmr0.h"
 extern void (*TMR0_InterruptHandler)(void);
-# 345 "./mcc_generated_files/tmr0.h"
+# 345 "mcc_generated_files/tmr0.h"
 void TMR0_DefaultInterruptHandler(void);
-# 56 "./mcc_generated_files/mcc.h" 2
-# 71 "./mcc_generated_files/mcc.h"
+# 56 "mcc_generated_files/mcc.h" 2
+# 71 "mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 84 "./mcc_generated_files/mcc.h"
+# 84 "mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
-# 12 "./methods.h" 2
-# 23 "./methods.h"
-void initialize() {
+# 50 "mcc_generated_files/interrupt_manager.c" 2
 
-    INTCONbits.GIE = 1;
 
-    SYSTEM_Initialize();
+void INTERRUPT_Initialize (void)
+{
 
+    RCONbits.IPEN = 0;
 }
 
-HallData readHallData() {
+void __attribute__((picinterrupt(("")))) INTERRUPT_InterruptManager (void)
+{
 
-    HallData input;
-
-    input.phaseU = PORTAbits.RA0;
-    input.phaseV = PORTAbits.RA1;
-    input.phaseW = PORTAbits.RA2;
-    return input;
-
-}
-
-
-SwitchingState interpretHallData(HallData input) {
-
-    if (PORTAbits.RA3 == 1 || PORTAbits.RA4 == 1) return OFF;
-
-
-
-    else if (input.phaseU == 1 && input.phaseV == 0 && input.phaseW == 1) return State1;
-
-    else if (input.phaseU == 1 && input.phaseV == 0 && input.phaseW == 0) return State2;
-
-    else if (input.phaseU == 1 && input.phaseV == 1 && input.phaseW == 0) return State3;
-
-    else if (input.phaseU == 0 && input.phaseV == 1 && input.phaseW == 0) return State4;
-
-    else if (input.phaseU == 0 && input.phaseV == 1 && input.phaseW == 1) return State5;
-
-    else if (input.phaseU == 0 && input.phaseV == 0 && input.phaseW == 1) return State6;
-
-    else return OFF;
-}
-
-
-PWMSignalOut setCWSwitching(SwitchingState currentState) {
-
-    PWMSignalOut output;
-
-    switch(currentState) {
-
-    case State1:
-
-        output.signalA_H = 1;
-        output.signalA_L = 0;
-        output.signalB_H = 0;
-        output.signalB_L = 1;
-        output.signalC_H = 0;
-        output.signalC_L = 0;
-        return output;
-
-    case State2:
-
-        output.signalA_H = 1;
-        output.signalA_L = 0;
-        output.signalB_H = 0;
-        output.signalB_L = 0;
-        output.signalC_H = 0;
-        output.signalC_L = 1;
-        return output;
-
-    case State3:
-
-        output.signalA_H = 0;
-        output.signalA_L = 0;
-        output.signalB_H = 1;
-        output.signalB_L = 0;
-        output.signalC_H = 0;
-        output.signalC_L = 1;
-        return output;
-
-    case State4:
-
-        output.signalA_H = 0;
-        output.signalA_L = 1;
-        output.signalB_H = 1;
-        output.signalB_L = 0;
-        output.signalC_H = 0;
-        output.signalC_L = 0;
-        return output;
-
-    case State5:
-
-        output.signalA_H = 0;
-        output.signalA_L = 1;
-        output.signalB_H = 0;
-        output.signalB_L = 0;
-        output.signalC_H = 1;
-        output.signalC_L = 0;
-        return output;
-
-    case State6:
-
-        output.signalA_H = 0;
-        output.signalA_L = 0;
-        output.signalB_H = 0;
-        output.signalB_L = 1;
-        output.signalC_H = 1;
-        output.signalC_L = 0;
-        return output;
-
-
-    default:
-        output.signalA_H = 0;
-        output.signalA_L = 0;
-        output.signalB_H = 0;
-        output.signalB_L = 0;
-        output.signalC_H = 0;
-        output.signalC_L = 0;
-        return output;
+    if(INTCONbits.TMR0IE == 1 && INTCONbits.TMR0IF == 1)
+    {
+        TMR0_ISR();
     }
-
-}
-
-
-PWMSignalOut setCCWSwitching(SwitchingState currentState) {
-
-    PWMSignalOut output;
-
-    switch(currentState) {
-
-    case State1:
-
-        output.signalA_H = 0;
-        output.signalA_L = 1;
-        output.signalB_H = 1;
-        output.signalB_L = 0;
-        output.signalC_H = 0;
-        output.signalC_L = 0;
-        return output;
-
-    case State2:
-
-        output.signalA_H = 0;
-        output.signalA_L = 1;
-        output.signalB_H = 0;
-        output.signalB_L = 0;
-        output.signalC_H = 1;
-        output.signalC_L = 0;
-        return output;
-
-    case State3:
-
-        output.signalA_H = 0;
-        output.signalA_L = 0;
-        output.signalB_H = 0;
-        output.signalB_L = 1;
-        output.signalC_H = 1;
-        output.signalC_L = 0;
-        return output;
-
-    case State4:
-
-        output.signalA_H = 1;
-        output.signalA_L = 0;
-        output.signalB_H = 0;
-        output.signalB_L = 1;
-        output.signalC_H = 0;
-        output.signalC_L = 0;
-        return output;
-
-    case State5:
-
-        output.signalA_H = 1;
-        output.signalA_L = 0;
-        output.signalB_H = 0;
-        output.signalB_L = 0;
-        output.signalC_H = 0;
-        output.signalC_L = 1;
-        return output;
-
-    case State6:
-
-        output.signalA_H = 0;
-        output.signalA_L = 0;
-        output.signalB_H = 1;
-        output.signalB_L = 0;
-        output.signalC_H = 0;
-        output.signalC_L = 1;
-        return output;
-
-
-    default:
-        output.signalA_H = 0;
-        output.signalA_L = 0;
-        output.signalB_H = 0;
-        output.signalB_L = 0;
-        output.signalC_H = 0;
-        output.signalC_L = 0;
-        return output;
-    }
-
-}
-
-
-void writePWM(PWMSignalOut output) {
-
-    LATBbits.LATB1 = output.signalA_H;
-    LATBbits.LATB0 = output.signalA_L;
-    LATDbits.LATD7 = output.signalB_H;
-    LATDbits.LATD6 = output.signalB_L;
-    LATDbits.LATD5 = output.signalC_H;
-    LATDbits.LATD4 = output.signalC_L;
-
-}
-
-
-void high_priority_interrupt_tmr0_isr(void) {
-
-    INTCONbits.TMR0IF = 0;
-
-
-    HallData input = readHallData();
-
-    SwitchingState state = interpretHallData(input);
-
-    PWMSignalOut output = setCWSwitching(state);
-
-    writePWM(output);
-}
-# 8 "main.c" 2
-
-
-
-
-
-void main() {
-
-    initialize();
-
-    for(;;) {
-
-
-
-
-
-
+    else
+    {
 
     }
-# 48 "main.c"
 }
