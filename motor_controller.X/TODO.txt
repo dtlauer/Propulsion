@@ -8,6 +8,7 @@ DONE - Write ISR
     DONE - initialize
     DONE - infinite loop to run through states
     DONE - button logic (handled in interpretHallData() )
+    DONE - Implement de-bouncing
 DONE - Implement both CCW and CW signal generation
 - Write test code
     - generate three random numbers (1 or 0) to simulate Hall data
@@ -16,5 +17,5 @@ DONE - Implement both CCW and CW signal generation
     - write a function to verify our output
     - run the above steps in a loop and count correct implementations
 
-- look up noise control for buttons
+DONE - look up noise control for buttons
 DONE - use MCC generated functions to clean up code

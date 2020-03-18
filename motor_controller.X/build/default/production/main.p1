@@ -123,6 +123,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f44k22.h: 7923: extern volatile LATDbits_t LATDbits __attribute__((address(0xF8C)));
 [v _LATDbits `VS393 ~T0 @X0 0 e@3980 ]
 [p mainexit ]
+[v F6318 `(v ~T0 @X0 1 tf1`ul ]
+"183 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18.h
+[v __delay `JF6318 ~T0 @X0 0 e ]
+[p i __delay ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f44k22.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f44k22.h: 54: __asm("ANSELA equ 0F38h");
 [; <" ANSELA equ 0F38h ;# ">
@@ -1472,17 +1476,41 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 15:     initialize();
 [e ( _initialize ..  ]
 "17
-[; ;main.c: 17:     for(;;) {
+[; ;main.c: 17:     for (;;) {
 {
 [e :U 897 ]
 {
-"25
-[; ;main.c: 25:     }
+"26
+[; ;main.c: 26:         if (PORTAbits.RA3 == 1 && PORTAbits.RA4 == 0) {
+[e $ ! && == -> . . _PORTAbits 0 3 `i -> 1 `i == -> . . _PORTAbits 0 4 `i -> 0 `i 900  ]
+{
+"27
+[; ;main.c: 27:             while (PORTAbits.RA3);
+[e $U 901  ]
+[e :U 902 ]
+[e :U 901 ]
+[e $ != -> . . _PORTAbits 0 3 `i -> 0 `i 902  ]
+[e :U 903 ]
+"28
+[; ;main.c: 28:             INTCONbits.TMR0IE = 0;
+[e = . . _INTCONbits 0 5 -> -> 0 `i `uc ]
+"29
+[; ;main.c: 29:             _delay((unsigned long)((50)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"30
+[; ;main.c: 30:             INTCONbits.TMR0IE = 1;
+[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
+"31
+[; ;main.c: 31:         }
+}
+[e :U 900 ]
+"38
+[; ;main.c: 38:     }
 }
 [e $U 897  ]
 [e :U 898 ]
 }
-"48
-[; ;main.c: 48: }
+"58
+[; ;main.c: 58: }
 [e :UE 896 ]
 }
