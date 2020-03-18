@@ -82,8 +82,8 @@ SwitchingState interpretHallData(HallData input) {
     else return OFF;
 }
 
-// function to determine switching states based on output from readHalldata(), returns PWM signal to be sent out
-PWMSignalOut setSwitchingStates(SwitchingState currentState) {
+// function to determine CW switching based on output from readHalldata(), returns PWM signal to be sent out
+PWMSignalOut setCWSwitching(SwitchingState currentState) {
 
     PWMSignalOut output;
 
@@ -94,8 +94,8 @@ PWMSignalOut setSwitchingStates(SwitchingState currentState) {
         output.signalA_H = 1;
         output.signalA_L = 0;
         output.signalB_H = 0;
-        output.signalB_L = 0;
-        output.signalC_H = 1;
+        output.signalB_L = 1;
+        output.signalC_H = 0;
         output.signalC_L = 0;
         return output;
 
@@ -112,8 +112,8 @@ PWMSignalOut setSwitchingStates(SwitchingState currentState) {
     case State3:
 
         output.signalA_H = 0;
-        output.signalA_L = 1;
-        output.signalB_H = 0;
+        output.signalA_L = 0;
+        output.signalB_H = 1;
         output.signalB_L = 0;
         output.signalC_H = 0;
         output.signalC_L = 1;
@@ -123,6 +123,86 @@ PWMSignalOut setSwitchingStates(SwitchingState currentState) {
 
         output.signalA_H = 0;
         output.signalA_L = 1;
+        output.signalB_H = 1;
+        output.signalB_L = 0;
+        output.signalC_H = 0;
+        output.signalC_L = 0;
+        return output;
+
+    case State5:
+
+        output.signalA_H = 0;
+        output.signalA_L = 1;
+        output.signalB_H = 0;
+        output.signalB_L = 0;
+        output.signalC_H = 1;
+        output.signalC_L = 0;
+        return output;
+
+    case State6:
+
+        output.signalA_H = 0;
+        output.signalA_L = 0;
+        output.signalB_H = 0;
+        output.signalB_L = 1;
+        output.signalC_H = 1;
+        output.signalC_L = 0;
+        return output;
+
+    // default case - turn the motor off (all 0 or all 1)
+    default:
+        output.signalA_H = 0;
+        output.signalA_L = 0;
+        output.signalB_H = 0;
+        output.signalB_L = 0;
+        output.signalC_H = 0;
+        output.signalC_L = 0;
+        return output;
+    }
+
+}
+
+// switching to turn motor CCW
+PWMSignalOut setCCWSwitching(SwitchingState currentState) {
+
+    PWMSignalOut output;
+
+    switch(currentState) {
+
+    case State1:
+
+        output.signalA_H = 0;
+        output.signalA_L = 1;
+        output.signalB_H = 1;
+        output.signalB_L = 0;
+        output.signalC_H = 0;
+        output.signalC_L = 0;
+        return output;
+
+    case State2:
+
+        output.signalA_H = 0;
+        output.signalA_L = 1;
+        output.signalB_H = 0;
+        output.signalB_L = 0;
+        output.signalC_H = 1;
+        output.signalC_L = 0;
+        return output;
+
+    case State3:
+
+        output.signalA_H = 0;
+        output.signalA_L = 0;
+        output.signalB_H = 0;
+        output.signalB_L = 1;
+        output.signalC_H = 1;
+        output.signalC_L = 0;
+        return output;
+
+    case State4:
+
+        output.signalA_H = 1;
+        output.signalA_L = 0;
         output.signalB_H = 0;
         output.signalB_L = 1;
         output.signalC_H = 0;
@@ -131,12 +211,12 @@ PWMSignalOut setSwitchingStates(SwitchingState currentState) {
 
     case State5:
 
-        output.signalA_H = 0;
+        output.signalA_H = 1;
         output.signalA_L = 0;
-        output.signalB_H = 1;
-        output.signalB_L = 1;
+        output.signalB_H = 0;
+        output.signalB_L = 0;
         output.signalC_H = 0;
-        output.signalC_L = 0;
+        output.signalC_L = 1;
         return output;
 
     case State6:
@@ -145,8 +225,8 @@ PWMSignalOut setSwitchingStates(SwitchingState currentState) {
         output.signalA_L = 0;
         output.signalB_H = 1;
         output.signalB_L = 0;
-        output.signalC_H = 1;
-        output.signalC_L = 0;
+        output.signalC_H = 0;
+        output.signalC_L = 1;
         return output;
 
     // default case - turn the motor off (all 0 or all 1)
@@ -184,7 +264,7 @@ void TMR0_DefaultInterruptHandler() {
     // use hall data to determine state of the motor
     SwitchingState state = interpretHallData(input);
     // use state of the motor to set PWM output
-    PWMSignalOut output = setSwitchingStates(state);
+    PWMSignalOut output = setCWSwitching(state);
     // send PWM output to the motor
     writePWM(output);
 }

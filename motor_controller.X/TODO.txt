@@ -8,6 +8,7 @@ DONE -Write ISR
     DONE -initialize
     DONE -infinite loop to run through states
     DONE -button logic (handled in interpretHallData() )
+DONE -Implement both CCW and CW signal generation
 -Write test code
     - generate three random numbers (1 or 0) to simulate Hall data
     - send to our functions to interpret and generate output
